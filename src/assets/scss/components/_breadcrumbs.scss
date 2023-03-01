@@ -1,0 +1,8 @@
+.breadcrumbs {
+    &__list {
+        @include unlist();
+        
+        display: flex;
+        align-items: center;
+    }
+}
