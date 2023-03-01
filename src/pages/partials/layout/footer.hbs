@@ -1,7 +1,91 @@
 <footer class='footer'>
-    
+    <div class="container">
+        <div class="footer__wrap">
+            <div class="footer__col">
+                <a href="" class="footer__logo">
+                    {{>picture src="logo.png"}}
+                </a>
 
+                <div class="footer__logo-title">
+                    Декоративные ставни и комплектующее для окон
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <div class="footer__footer-menu footer-menu">
+                    <ul class="footer-menu__list">
+                        {{#each data.footer_menu }}
+                        <li class="footer-menu__item">
+                            <a href="" class="footer-menu__link">
+                                {{this}}
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <div class="footer__footer-menu footer-menu">
+                    <ul class="footer-menu__list">
+                        {{#each data.footer_menu }}
+                        <li class="footer-menu__item">
+                            <a href="" class="footer-menu__link">
+                                {{this}}
+                            </a>
+
+                            <ul class="footer-menu__sublist">
+                                {{#each this.submenu }}
+                                <li class="footer-menu__subitem">
+                                    <a href="" class="footer-menu__sublink">
+                                        {{this}}
+                                    </a>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <a href="" class="footer__tel">
+                    +7 (999) 999 99 99
+                </a>
+                <a href="" class="footer__email">
+                    technofasade@mail.ru
+                </a>
+                <div class="footer__address">
+                    г. Москва, Ново-Совхозная улица, 3 
+                </div>
+                <div class="footer__worktime">
+                    Пн. - Пт.  9:00-20:00
+                </div>
+
+                <a href="" class="footer__link">
+                    Оставить заявку
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer__bottombar">
+            <div class="footer__copyright">
+                ©2022 Techno Fasade, декоративные ставни
+            </div>
+
+            <div class="footer__links">
+                <a href="" class="footer__link">
+                    Политика конфиденциальности
+                </a>
+            </div>
+
+            {{> socials class="footer__socials" }}
+        </div>
+    </div>
 </footer>
 
 </body>
-</html> 
+
+</html>

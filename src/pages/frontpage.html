@@ -1,0 +1,453 @@
+{{> ./layout/header title='Главная' }}
+
+<main class="frontpage">
+    <section class="frontpage__hero hero">
+        <div class="hero__wrap">
+            <div class="container">
+                <div class="hero__head">
+                    <h1 class="hero__heading">
+                        Декоративные элементы для окон
+                    </h1>
+                    <p class="hero__desc">
+                        От привлекательных декоративных ставней, великолепных
+                        дверных и оконных наличников до монтажных блоков для
+                        различных целей - идеально работают совместно,
+                        обеспечивая неограниченные возможности для создания
+                        стиля
+                    </p>
+                </div>
+
+                <div class="hero__hero-carousel hero-carousel">
+                    <div class="hero-carousel__wrap swiper">
+                        <button
+                            class="hero-carousel__control hero-carousel__control--prev"
+                        >
+                            <svg
+                                width="48"
+                                height="67"
+                                viewBox="0 0 48 67"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M33 33.5L0 67L21.5 33.5L0 0L33 33.5Z"
+                                    fill="white"
+                                />
+                                <path
+                                    d="M48 33.5L23 58L38.5 33.5L23 9L48 33.5Z"
+                                    fill="white"
+                                />
+                            </svg>
+                        </button>
+
+                        <ul class="hero-carousel__list swiper-wrapper">
+                            {{#each data.heroCarousel}}
+                            <li class="hero-carousel__item swiper-slide">
+                                {{> picture src=this}}
+                            </li>
+                            {{/each}}
+                        </ul>
+
+                        <div class="hero-carousel__counter">
+                            <span>01</span>/05
+                        </div>
+
+                        <button
+                            class="hero-carousel__control hero-carousel__control--next"
+                        >
+                            <svg
+                                width="48"
+                                height="67"
+                                viewBox="0 0 48 67"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M33 33.5L0 67L21.5 33.5L0 0L33 33.5Z"
+                                    fill="white"
+                                />
+                                <path
+                                    d="M48 33.5L23 58L38.5 33.5L23 9L48 33.5Z"
+                                    fill="white"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="frontpage__advantages advantages">
+        <div class="container">
+            <h2 class="advantages__heading" data-backtext="Techno Fasade">
+                Мы производим ставни класса Lux, с вниманием к каждой детали
+            </h2>
+            <div class="advantages__subheading">О продукте</div>
+
+            <ul class="advantages__list">
+                {{#each data.advantages}}
+                <li class="advantages__advantage-item advantage-item">
+                    {{> picture class="advantage-item__img" src=this.img }}
+
+                    <div class="advantage-item__title">{{this.title}}</div>
+
+                    <div class="advantage-item__desc">{{this.desc}}</div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+
+    <section
+        class="frontpage__products products"
+        data-backtext="Декоративные элементы для окон"
+    >
+        <div class="container">
+            <h2 class="products__heading">Продукция</h2>
+
+            <ul class="products__list">
+                {{#each data.products }}
+                <li class="products__product-item product-item">
+                    <div class="product-item__head">
+                        <a href="" class="product-item__title">
+                            СТавни <span>жалюзи</span>
+                        </a>
+
+                        <div class="product-item__desc">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean
+                            massa. Сonsectetuer adipiscing elit. Aenean commodo
+                            ligula eget dolor. Aenean massa. Сommodo ligula eget
+                            dolor.
+                        </div>
+                    </div>
+
+                    <div class="product-item__carousel swiper">
+                        <ul class="product-item__carousel-wrap swiper-wrapper">
+                            {{#each this.imgs }}
+                            <li
+                                class="product-item__carousel-item swiper-slide"
+                            >
+                                {{> picture src=this }}
+                            </li>
+                            {{/each}}
+                        </ul>
+
+                        <div class="product-item__carousel-counter">
+                            <span>02</span>/05
+                        </div>
+                    </div>
+
+                    <div
+                        class="product-item__product-features product-features"
+                    >
+                        <div class="product-features__heading">
+                            Характеристики
+                        </div>
+
+                        <ul class="product-features__list">
+                            {{#each this.features }}
+                            <li
+                                class="product-features__feature-item feature-item"
+                            >
+                                <button class="feature-item__toggle">
+                                    Комплектации
+                                    <span class="feature-item__notice">
+                                        * Опционально
+                                    </span>
+                                    <span>
+                                        Одна ставня/Комплект (верхняя+нижняя)
+                                    </span>
+                                </button>
+                                <div class="feature-item__content">
+                                    <figure class="feature-item__content-item">
+                                        {{> picture src=this.img }}
+                                        <figcaption>{{this.title}}</figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+
+                    <a href="" class="product-item__link">
+                        Подробнее о продукции
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+
+    <section class="frontpage__variations variations">
+        <div class="variations__wrap">
+            <div class="container">
+                <h2
+                    class="variations__heading"
+                    data-backtext="Используемый крепеж"
+                >
+                    Крепеж
+                </h2>
+
+                <div class="variations__head">
+                    <div class="variations__subheading">
+                        Крепеж в нескольких цветовых решениях
+                    </div>
+
+                    <div class="variations__desc">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit. Aenean commodo ligula eget dolor. Aenean massa.
+                        Сonsectetuer adipiscing elit. Aenean commodo ligula eget
+                        dolor. Aenean massa.
+                    </div>
+                </div>
+
+                <div class="variations__carousel swiper">
+                    <ul class="variations__carousel-list swiper-wrapper">
+                        {{#each data.variations }}
+                        <li class="variations__carousel-item swiper-slide">
+                            {{> picture src=this.img }}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="frontpage__montage montage">
+        <div class="montage__wrap">
+            <div class="container">
+                <h2 class="montage__heading" data-backtext="Способ установки">
+                    Монтаж
+                </h2>
+
+                <div class="montage__head">
+                    <div class="montage__subheading">
+                        Простой и удобный монтаж
+                    </div>
+
+                    <div class="montage__desc">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit. Aenean commodo ligula eget dolor. Aenean massa.
+                        Сonsectetuer adipiscing elit. Aenean commodo ligula eget
+                        dolor. Aenean massa.
+                    </div>
+                </div>
+
+                <div class="montage__video"></div>
+
+                <a href="" class="montage__link">Подробнее о монтаже</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="frontpage__portfolio portfolio">
+        <div class="portfolio__wrap">
+            <div class="container">
+                <h2
+                    class="portfolio__heading"
+                    data-backtext="Реализованные решения"
+                >
+                    Примеры работ
+                </h2>
+
+                <div class="portfolio__carousel swiper">
+                    <ul class="portfolio__carousel-list swiper-wrapper">
+                        {{#each data.portfolop }}
+                        <li class="portfolio__carousel-item swiper-slide">
+                            {{> picture src=this.img }}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                <a href="" class="portfolio__link">Все проекты</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="frontpage__testimonials testimonials">
+        <div class="testimonials__wrap">
+            <div class="container">
+                <h2 class="testimonials__heading" data-backtext="Наши клиенты">
+                    Отзывы
+                </h2>
+
+                <div class="testimonials__carousel swiper">
+                    <ul class="testiomonials__carousel-list swiper-wrapper">
+                        {{#each data.testimonials}}
+                        <li
+                            class="testimonials__testimonial-item testimonial-item swiper-slide"
+                        >
+                            <div class="testimonial-item__wrap">
+                                {{> picture class="testimonial-item__img"
+                                src=this.img }}
+
+                                <div class="testimonial-item__title">
+                                    {{this.title}}
+                                </div>
+
+                                <div class="testimonial-item__text">
+                                    {{this.text}}
+                                </div>
+
+                                <div class="testimonial-item__foot">
+                                    <time class="testimonial-item__date">
+                                        {{this.time}}
+                                    </time>
+
+                                    <button class="testimonial-item__link">
+                                        Читать полностью
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                <a href="" class="testimonials__link"> Все отзывы </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="frontpage__about-us about-us">
+        <div class="about-us__wrap">
+            <div class="container">
+                <h2 class="about-us__heading" data-backtext="Techno fasade">
+                    О компании
+                </h2>
+
+                <div class="about-us__head">
+                    <div class="about-us__subheading">
+                        Мы одни из первых производителей декоративных ставень в
+                        России
+                    </div>
+                    <div class="about-us__desc">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean
+                            massa. Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus. Donec
+                            quam felis, ultricies nec, pellentesque eu, pretium
+                            quis, sem.
+                        </p>
+                        <p>
+                            Nulla consequat massa quis enim. Donec pede justo,
+                            fringilla vel, aliquet nec, vulputate eget, arcu. In
+                            enim justo, rhoncus ut, imperdiet a, venenatis
+                            vitae, justo. Nullam dictum felis eu pede mollis
+                            pretium. Integer tincidunt.Lorem ipsum dolor sit
+                            amet, consectetuer adipiscing
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-us__our-advantages our-advantages">
+                    <ul class="our-advantages__list">
+                        <li class="our-advantages__item">
+                            <div class="our-advantages__item-title">
+                                Собственное производство
+                            </div>
+                            <div class="our-advantages__item-desc">
+                                Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit. Aenean commodo ligula eget
+                                dolor. Aenean massa. Cum sociis natoque
+                                penatibus et magnis dis
+                            </div>
+                        </li>
+
+                        <li class="our-advantages__item">
+                            <div class="our-advantages__item-title">
+                                Широкая сеть дестрибьютеров
+                            </div>
+                            <div class="our-advantages__item-desc">
+                                Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit. Aenean commodo ligula eget
+                                dolor. Aenean massa. Cum sociis natoque
+                                penatibus et magnis dis
+                            </div>
+                        </li>
+
+                        <li class="our-advantages__item">
+                            <div class="our-advantages__item-title">
+                                Уникальная технология
+                            </div>
+                            <div class="our-advantages__item-desc">
+                                Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit. Aenean commodo ligula eget
+                                dolor. Aenean massa. Cum sociis natoque
+                                penatibus et magnis dis
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="" class="about-us__link"> О компании </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="frontpage__news news">
+        <div class="news__wrap">
+            <div class="container">
+                <h2 class="news__heading" data-backtext="Интересное">
+                    Новости
+                </h2>
+
+                <ul class="news__list">
+                    {{#each data.news}}
+                    <li class="news__news-item news-item">
+                        {{>picture class="news-item__img" src=this.img }}
+
+                        <div class="news-item__title">{{this.title}}</div>
+
+                        <time class="news-item__date"> {{this.date}} </time>
+                    </li>
+                    {{/each}}
+                </ul>
+
+                <a href="" class="news__link"> Все новости </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="frontpage__contacts contacts">
+        <div class="contacts__wrap">
+            <div class="container">
+                <h2 class="contacts__heading" data-backtext="Всегда на связи">
+                    Контакты
+                </h2>
+
+                <div class="contacts__content">
+                    <div class="contacts__col">
+                        <div class="contacts__subheading">
+                            Есть вопросы? Можете задать их нашему менеджеру
+                        </div>
+                        <div class="contacts__text">
+                            Заполните форму обратного звонка и наш специалист свяжется с вами в ближайшее время, остветит на все интересующие вопросы и поможет подобрать оптимальное решение под ваши нужды
+                        </div>
+                    </div>
+                    <div class="contacts__col">
+                        <form action="" class="contacts__form">
+                            {{> ./form/input class="contacts__input" type="text" label="Имя" }}
+                            {{> ./form/input class="contacts__input" type="tel" label="Телефон" }}
+
+                            <button class="contacts__form-link">
+                                Оставить заявку
+                            </button>
+
+                            <div class="contacts__policy">
+                                Нажимая на кнопку «Оставить заявку» вы даете свое согласие на обработку персональных данных сайта
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{{> ./layout/footer }}
