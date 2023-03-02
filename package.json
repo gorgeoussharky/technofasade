@@ -7,7 +7,8 @@
         "> 5%"
     ],
     "dependencies": {
-        "bootstrap": "^5.2.3"
+        "bootstrap": "^5.2.3",
+        "swiper": "^9.1.0"
     },
     "devDependencies": {
         "@html-eslint/eslint-plugin": "^0.16.0",

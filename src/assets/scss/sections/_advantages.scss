@@ -1,0 +1,82 @@
+.advantages {
+    &__wrap {
+        padding-top: rem(266px);
+        padding-bottom: rem(176px);
+        margin-bottom: rem(48px);
+        border-bottom: 1px solid #DDD;
+        position: relative;
+
+        &::after {
+            @extend %bordersymbol;
+
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: -30px;
+        }
+    }
+
+    &__heading {
+        @extend h1;
+
+        text-align: center;
+        max-width: 880px;
+        margin: auto;
+
+        &::before {
+            font-size: rem(180px);
+            white-space: nowrap;
+            left: -40%;
+        }
+    }
+
+    &__subheading {
+        text-align: center;
+        margin-top: rem(-40px);
+        margin-bottom: rem(120px);
+    }
+
+    &__list {
+        @include unlist();
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(64px);
+        counter-reset: section;
+    }
+
+    &__advantage-item {
+        position: relative;
+
+        &::before {
+            counter-increment: section;
+            content: counter(section, decimal-leading-zero);
+            font-size: rem(60px);
+            position: absolute;
+            left: -20px;
+            top: -10px;
+            font-weight: 300;
+        }
+    }
+}
+
+.advantage-item {
+    &__img {
+        width: 100%;
+        height: 375px;
+        margin-bottom: rem(28px);
+        display: block;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        @extend h2;
+
+        margin-bottom: rem(20px);
+    }
+}

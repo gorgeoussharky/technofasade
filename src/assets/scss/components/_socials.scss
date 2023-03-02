@@ -1,0 +1,9 @@
+.socials {
+    &__list {
+        @include unlist();
+        
+        display: flex;
+        align-items: center;
+        gap: rem(14px);
+    }
+}

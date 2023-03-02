@@ -1,3 +1,7 @@
+$container-max-widths: (
+  xxl: 1404px
+);
+
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/maps";
@@ -5,6 +9,7 @@
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/containers";
 @import "~sass-rem/rem";
+@import 'swiper/scss';
 @import "mixins/utility";
 @import "base/variables";
 @import "base/fonts";
@@ -15,5 +20,9 @@
 @import "components/modals";
 @import "components/breadcrumbs";
 @import "components/form";
+@import "components/socials";
 @import "layout/header";
 @import "layout/footer";
+@import "sections/hero";
+@import "sections/advantages";
+@import "sections/products"

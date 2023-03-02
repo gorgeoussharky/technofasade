@@ -1,3 +1,14 @@
 h1 {
-    font-weight: 700;
+    font-weight: 600;
+    font-size: rem(60px);
+    font-family: Cormorant, serif;
+    text-transform: uppercase;
+    line-height: rem(70px);
+}
+
+h2 {
+    font-weight: 600;
+    font-size: rem(32px);
+    font-family: Cormorant, serif;
+    line-height: rem(30px);
 }

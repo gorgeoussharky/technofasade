@@ -1,2 +1,109 @@
-[
-]
+{
+    "hero_carousel": [
+        "placeholder/house1.jpg",
+        "placeholder/house2.jpg",
+        "placeholder/house3.jpg"
+    ],
+    "advantages": [
+        {
+            "img": "advantages/advantage1.jpg",
+            "title": "Цвета устойчивые к воздействию солнца",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+        },
+        {
+            "img": "advantages/advantage2.jpg",
+            "title": "Множество сочетаний элементов дизайна",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+        },
+        {
+            "img": "advantages/advantage3.jpg",
+            "title": "Различные текстуры наличников и ставень",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+        },
+        {
+            "img": "advantages/advantage4.jpg",
+            "title": "Гарантия на всю подукцию 5 лет",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+        }
+    ], 
+    "products": [
+        {
+            "title": "Жалюзи",
+            "imgs": [
+                "placeholder/house1.jpg",
+                "placeholder/house2.jpg",
+                "placeholder/house3.jpg"
+            ],
+            "features": [
+                {
+                    "title": "Комплектации",
+                    "optional": false,
+                    "values": [
+                        {
+                            "title": "Одна ставня",
+                            "img": "advantages/advantage2.jpg"
+                        },
+                        {
+                            "title": "Комплект (верхняя+нижняя)",
+                            "img": "advantages/advantage4.jpg"
+                        }
+                    ]
+                },
+                {
+                    "title": "Размер (мм)",
+                    "optional": false,
+                    "values": [
+                        {
+                            "title": "500Х30",
+                            "img": "advantages/advantage1.jpg"
+                        }
+                    ]
+                },
+                {
+                    "title": "Серединные части (мм)",
+                    "optional": true,
+                    "values": [
+                        {
+                            "title": "300х330",
+                            "img": "advantages/advantage1.jpg"
+                        },
+                        {
+                            "title": "200х330",
+                            "img": "advantages/advantage2.jpg"
+                        },
+                        {
+                            "title": "500х330",
+                            "img": "advantages/advantage3.jpg"
+                        }
+                    ]
+                },
+                {
+                    "title": "Цвета",
+                    "optional": false,
+                    "values": [
+                        {
+                            "title": "Белый",
+                            "color": "#EBEBEB",
+                            "img": "placeholder/color1.jpg"
+                        },
+                        {
+                            "title": "Коричневый",
+                            "color": "#62453F",
+                            "img": "placeholder/color2.jpg"
+                        },
+                        {
+                            "title": "Зеленый",
+                            "color": "#376841",
+                            "img": "placeholder/color3.jpg"
+                        },
+                        {
+                            "title": "Красный",
+                            "color": "#973630",
+                            "img": "placeholder/color4.jpg"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
