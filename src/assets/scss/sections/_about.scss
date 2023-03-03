@@ -1,0 +1,68 @@
+ .about-us {
+    &__wrap {
+        padding: rem(160px 0);
+        position: relative;
+        border-bottom: 1px solid #DDD;
+
+        &::after {
+            @extend %bordersymbol;
+        }
+    }
+
+    &__heading {
+        margin-bottom: rem(120px);
+        text-align: center;
+
+        &::before {
+            width: 70%;
+            margin: auto;
+            top: -70px;
+            right: 0;
+        }
+    }
+
+    &__head {
+        display: grid;
+        grid-template-columns: auto 500px;
+        gap: rem(80px);
+        margin-bottom: rem(76px);
+    }
+
+    &__subheading {
+        @extend h1;
+    }
+
+    &__link {
+        @extend %main-link;
+
+        width: 170px;
+        margin-top: rem(80px);
+    }
+ }
+
+.our-advantages {
+    &__list {
+        @include unlist();
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+    }
+
+    &__item {
+        padding: rem(68px 74px);
+
+        &-title {
+            font-size: rem(36px);
+            font-family: Cormorant, sans-serif;
+            font-weight: 700;
+            margin-bottom: rem(24px);
+        }
+
+        &:nth-of-type(2) {
+            border-left:  1px solid #ddd;
+            border-right:  1px solid #ddd;
+        }
+    }
+}

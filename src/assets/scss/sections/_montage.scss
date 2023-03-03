@@ -1,0 +1,41 @@
+.montage {
+    &__wrap {
+        padding: rem(160px 0);
+        position: relative;
+        border-bottom: 1px solid #DDD;
+
+        &::after {
+            @extend %bordersymbol;
+        }
+    }
+
+    &__heading {
+        margin-bottom: rem(140px);
+        text-align: center;
+
+        &::before {
+            width: 70%;
+            margin: auto;
+            top: -40px;
+            right: 0;
+        }
+    }
+
+    &__head {
+        display: grid;
+        grid-template-columns: auto 500px;
+        gap: rem(80px);
+        margin-bottom: rem(70px);
+    }
+
+    &__subheading {
+        @extend h1;
+    }
+
+    &__link {
+        @extend %main-link;
+
+        margin-top: rem(80px);
+        width: 270px;
+    }
+}

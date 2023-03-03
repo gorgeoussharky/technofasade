@@ -16,6 +16,10 @@ const img = (
 
     const file: FileFormat = {}
 
+    if (!src) {
+        return ''
+    }
+
     // this is so idiotic
     switch (ext) {
         case '.jpg':
@@ -32,7 +36,11 @@ const img = (
             file.base = require(`../../assets/img/${dir ? `${dir}/${name}` : `${name}`}.svg`) as string
             break
         default:
+            if (typeof src === 'string') {
+                file.base = src
+            }
             file.base = src.toString()
+            
             break
     }
 

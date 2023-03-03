@@ -3,6 +3,9 @@ import Swiper from 'swiper'
 document.addEventListener('DOMContentLoaded', () => {
     const heroCarousels = document.querySelectorAll('.hero-carousel__wrap')
     const productItemCarousels = document.querySelectorAll('.product-item__carousel')
+    const variationsCarousels = document.querySelectorAll('.variations__carousel')
+    const portfolioCarousels = document.querySelectorAll('.portfolio__carousel')
+    const testimonialsCarousels = document.querySelectorAll('.testimonials__carousel')
 
     heroCarousels.forEach((carousel) => {
         const control = carousel.querySelector('.hero-carousel__control') as HTMLButtonElement | undefined
@@ -61,6 +64,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (counter) counter.innerHTML = content
                 }
             }
+        })
+    })
+
+    variationsCarousels.forEach((carousel) => {
+        const instance = new Swiper(carousel as HTMLElement, {
+            slidesPerView: 2,
+            loop: true,
+        })
+    })
+
+    portfolioCarousels.forEach((carousel) => {
+        const instance = new Swiper(carousel as HTMLElement, {
+            slidesPerView: 2,
+            loop: true,
+        })
+    })
+
+    testimonialsCarousels.forEach((carousel) => {
+        const instance = new Swiper(carousel as HTMLElement, {
+            slidesPerView: 2,
+            loop: true,
+            spaceBetween: 40,
         })
     })
 })

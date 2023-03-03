@@ -25,9 +25,10 @@
             "title": "Гарантия на всю подукцию 5 лет",
             "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
         }
-    ], 
+    ],
     "products": [
         {
+            "type": "Ставни",
             "title": "Жалюзи",
             "imgs": [
                 "placeholder/house1.jpg",
@@ -104,6 +105,223 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "Ставни",
+            "title": "Феленка",
+            "imgs": [
+                "placeholder/house1.jpg",
+                "placeholder/house2.jpg",
+                "placeholder/house3.jpg"
+            ],
+            "features": [
+                {
+                    "title": "Комплектации",
+                    "optional": false,
+                    "values": [
+                        {
+                            "title": "Одна ставня",
+                            "img": "advantages/advantage2.jpg"
+                        },
+                        {
+                            "title": "Комплект (верхняя+нижняя)",
+                            "img": "advantages/advantage4.jpg"
+                        }
+                    ]
+                },
+                {
+                    "title": "Размер (см)",
+                    "optional": false,
+                    "values": [
+                        {
+                            "title": "50X30",
+                            "img": "advantages/advantage1.jpg"
+                        }
+                    ]
+                },
+                {
+                    "title": "Серединные части (мм)",
+                    "optional": true,
+                    "values": [
+                        {
+                            "title": "300х330",
+                            "img": "advantages/advantage1.jpg"
+                        },
+                        {
+                            "title": "200х330",
+                            "img": "advantages/advantage2.jpg"
+                        },
+                        {
+                            "title": "500х330",
+                            "img": "advantages/advantage3.jpg"
+                        }
+                    ]
+                },
+                {
+                    "title": "Цвета",
+                    "optional": false,
+                    "values": [
+                        {
+                            "title": "Белый",
+                            "color": "#EBEBEB",
+                            "img": "placeholder/color1.jpg"
+                        },
+                        {
+                            "title": "Коричневый",
+                            "color": "#62453F",
+                            "img": "placeholder/color2.jpg"
+                        },
+                        {
+                            "title": "Зеленый",
+                            "color": "#376841",
+                            "img": "placeholder/color3.jpg"
+                        },
+                        {
+                            "title": "Красный",
+                            "color": "#973630",
+                            "img": "placeholder/color4.jpg"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Горизонтальные",
+            "title": "Планки",
+            "imgs": [
+                "placeholder/house1.jpg",
+                "placeholder/house2.jpg",
+                "placeholder/house3.jpg"
+            ],
+            "features": [
+                {
+                    "title": "Комплектации",
+                    "optional": false,
+                    "values": [
+                        {
+                            "title": "Планка",
+                            "img": "advantages/advantage2.jpg"
+                        },
+                        {
+                            "title": "Планка+торцевые заглушки",
+                            "img": "advantages/advantage4.jpg"
+                        },
+                        {
+                            "title": "Планка+замковый камень",
+                            "img": "advantages/advantage4.jpg"
+                        },
+                        {
+                            "title": "Планка+торцевые заглушки+замковый камень",
+                            "img": "advantages/advantage4.jpg"
+                        }
+                    ]
+                },
+                {
+                    "title": "Размер",
+                    "optional": false,
+                    "values": [
+                        {
+                            "title": "В размер окна",
+                            "img": "advantages/advantage1.jpg"
+                        },
+                        {
+                            "title": "В размер окна+ставни",
+                            "img": "advantages/advantage1.jpg"
+                        }
+                    ]
+                },
+                {
+                    "title": "Замковые камни",
+                    "optional": false,
+                    "values": [
+                        {
+                            "title": "Полусонце",
+                            "img": "advantages/advantage2.jpg"
+                        },
+                        {
+                            "title": "Ромб",
+                            "img": "advantages/advantage3.jpg"
+                        }
+                    ]
+                },
+                {
+                    "title": "Цвета",
+                    "optional": false,
+                    "values": [
+                        {
+                            "title": "Белый",
+                            "color": "#EBEBEB",
+                            "img": "placeholder/color1.jpg"
+                        },
+                        {
+                            "title": "Коричневый",
+                            "color": "#62453F",
+                            "img": "placeholder/color2.jpg"
+                        },
+                        {
+                            "title": "Зеленый",
+                            "color": "#376841",
+                            "img": "placeholder/color3.jpg"
+                        },
+                        {
+                            "title": "Красный",
+                            "color": "#973630",
+                            "img": "placeholder/color4.jpg"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "variations": [
+        "placeholder/variation1.jpg",
+        "placeholder/variation2.jpg",
+        "placeholder/variation3.jpg",
+        "placeholder/variation4.jpg"
+    ],
+    "portfolio": [
+        "placeholder/variation1.jpg",
+        "placeholder/variation2.jpg",
+        "placeholder/variation3.jpg",
+        "placeholder/variation4.jpg"
+    ],
+    "testimonials": [
+        {
+            "img": "placeholder/user1.jpg",
+            "title": "Анна Гладких",
+            "date": "18.09.22"
+        },
+        {
+            "img": "placeholder/user2.jpg",
+            "title": "Алексей Иванов",
+            "date": "22.09.22"
+        },
+        {
+            "img": "placeholder/user3.jpg",
+            "title": "Диана Горшкова",
+            "date": "30.09.22"
+        },
+        {
+            "img": "placeholder/user1.jpg",
+            "title": "Анна Гладких",
+            "date": "31.09.22"
+        }
+    ],
+    "news": [
+        {
+            "img": "placeholder/news1.jpg",
+            "title": "Заголовок новости в пределах 2-х строк. При необходимости можно в 3 строки",
+            "date": "18.09.22"
+        },
+        {
+            "img": "placeholder/news2.jpg",
+            "title": "Заголовок новости в пределах 2-х строк.",
+            "date": "22.09.22"
+        },
+        {
+            "img": "placeholder/news3.jpg",
+            "title": "Заголовок новости в пределах 2-х строк. При необходимости можно в 3 строки",
+            "date": "30.09.22"
         }
     ]
 }

@@ -1,0 +1,48 @@
+.contacts {
+    &__wrap {
+        padding-top: rem(175px);
+        padding-bottom: rem(150px);
+        border-bottom: 1px solid #ddd;
+
+        &::after {
+            @extend %bordersymbol;
+        }
+    }
+
+    &__heading {
+        margin-bottom: rem(70px);
+        text-align: center;
+
+        &::before {
+            width: 70%;
+            margin: auto;
+            top: -40px;
+            right: 0;
+        }
+    }
+
+    &__subheading {
+        @extend h1;
+
+        margin-bottom: rem(36px);
+
+        span {
+            display: block;
+        }
+    }
+
+    &__text {
+        max-width: 658px;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: auto 465px;
+        gap: rem(64px);
+    }
+
+    &__form {
+        border: 1px solid #EBCEBF;
+        padding: rem(36px);
+    }
+}

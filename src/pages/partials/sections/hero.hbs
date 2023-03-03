@@ -1,0 +1,43 @@
+<section class="frontpage__hero hero">
+    <div class="hero__wrap">
+        <div class="container">
+            <div class="hero__head">
+                <h1 class="hero__heading">
+                    Декоративные элементы для окон
+                </h1>
+                <div class="hero__desc">
+                    От привлекательных декоративных ставней, великолепных
+                    дверных и оконных наличников до монтажных блоков для
+                    различных целей - идеально работают совместно,
+                    обеспечивая неограниченные возможности для создания
+                    стиля
+                </div>
+            </div>
+        </div>
+
+        <div class="hero__hero-carousel hero-carousel">
+            <div class="hero-carousel__wrap swiper">
+                <ul class="hero-carousel__list swiper-wrapper">
+                    {{#each data.hero_carousel}}
+                    <li class="hero-carousel__item swiper-slide">
+                        {{> picture src=this}}
+                    </li>
+                    {{/each}}
+                </ul>
+
+                <div class="hero-carousel__counter">
+                    <span>01</span>/05
+                </div>
+
+                <div class="hero-carousel__controls" data-animate-controls>
+                    <button class="hero-carousel__control" data-control data-direction="next">
+                        <svg width="48" height="67" viewBox="0 0 48 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M33 33.5L0 67L21.5 33.5L0 0L33 33.5Z" fill="white" />
+                            <path d="M48 33.5L23 58L38.5 33.5L23 9L48 33.5Z" fill="white" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

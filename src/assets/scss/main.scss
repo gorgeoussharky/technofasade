@@ -1,5 +1,5 @@
 $container-max-widths: (
-  xxl: 1404px
+  xxl: 1424px
 );
 
 @import "~bootstrap/scss/functions";
@@ -25,4 +25,11 @@ $container-max-widths: (
 @import "layout/footer";
 @import "sections/hero";
 @import "sections/advantages";
-@import "sections/products"
+@import "sections/products";
+@import "sections/variations";
+@import "sections/montage";
+@import "sections/portfolio";
+@import "sections/testimonials";
+@import "sections/about";
+@import "sections/news";
+@import "sections/contacts"
