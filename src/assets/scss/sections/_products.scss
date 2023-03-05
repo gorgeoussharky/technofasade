@@ -2,7 +2,6 @@
     &__wrap {
         padding-top: rem(132px);
         padding-bottom: rem(80px);
-        overflow: hidden;
     }
 
     &__heading {
@@ -106,6 +105,14 @@
                 object-fit: cover;
             }
         }
+
+        &-controls {
+            @extend %carousel-controls-wrap;
+        }
+
+        &-control {
+            @extend %carousel-control;
+        }
     }
 
     &__carousel-counter {
@@ -135,6 +142,11 @@
 
         margin-top: rem(80px);
         font-size: rem(20px);
+
+        &::after {
+            width: 30px;
+            height: 30px;
+        }
     }
 }
 
@@ -166,7 +178,7 @@
         text-align: left;
 
         &--optional {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 2fr;
         }
     }
 
@@ -226,9 +238,9 @@
         gap: rem(40px);
 
         &--2 {
-           .feature-item__content-item:nth-of-type(2) {
-            grid-column: 3 / 3;
-           }
+            .feature-item__content-item:nth-of-type(2) {
+                grid-column: 3 / 3;
+            }
         }
     }
 

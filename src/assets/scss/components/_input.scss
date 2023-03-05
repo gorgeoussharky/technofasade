@@ -1,0 +1,66 @@
+.input {
+    &__wrap {
+        position: relative;
+    }
+
+    &__control {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #ddd;
+        padding: rem(16px 0);
+        font-size: rem(20px);
+        font-weight: 500;
+        color: $main;
+        line-height: 0.8;
+        transition: 350ms;
+        width: 100%;
+
+        &::placeholder {
+            color: #8d8d8d;
+        }
+    }
+
+    &__label {
+        @extend %sr-only;
+    }
+
+    &__icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        height: fit-content;
+        margin: auto;
+
+        svg path {
+            transition: 350ms;
+        }
+    }
+
+    &--icon {
+        .input__control {
+            padding-left: rem(40px);
+        }
+    }
+
+    &--active {
+        .input__control {
+            border-color: $main;
+            transition: 350ms;
+        }
+
+        .input__icon {
+            svg path {
+                stroke: $main;
+                transition: 350ms;
+            }
+
+            &--user {
+                svg path {
+                    fill: $main;
+                    transition: 350ms;
+                }
+            }
+        }
+    }
+}

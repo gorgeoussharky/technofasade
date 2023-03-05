@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             control.style.opacity = '0'
         })
 
-        controlWrap.addEventListener('mousemove', (e) => {
+        controlWrap.addEventListener('mousemove', (e) => {  
             const bounds = controlWrap.getBoundingClientRect()
             const x = (e as MouseEvent).clientX - bounds.left
             const y = (e as MouseEvent).clientY - bounds.top

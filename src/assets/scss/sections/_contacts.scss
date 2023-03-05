@@ -1,12 +1,8 @@
 .contacts {
     &__wrap {
-        padding-top: rem(175px);
+        padding-top: rem(150px);
         padding-bottom: rem(150px);
-        border-bottom: 1px solid #ddd;
-
-        &::after {
-            @extend %bordersymbol;
-        }
+        position: relative;
     }
 
     &__heading {
@@ -14,7 +10,7 @@
         text-align: center;
 
         &::before {
-            width: 70%;
+            width: 100%;
             margin: auto;
             top: -40px;
             right: 0;
@@ -37,12 +33,65 @@
 
     &__content {
         display: grid;
-        grid-template-columns: auto 465px;
+        grid-template-columns: auto 500px;
         gap: rem(64px);
     }
 
     &__form {
-        border: 1px solid #EBCEBF;
+        border: 1px solid #ebcebf;
         padding: rem(36px);
+        display: grid;
+        gap: rem(24px);
+        position: relative;
+
+        &::before, &::after {
+            content: '';
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3.53553' y='12.6797' width='11.5219' height='11.5219' transform='rotate(-45 3.53553 12.6797)' stroke='%23CB9274' stroke-width='5'/%3E%3C/svg%3E%0A");
+            width: 60px;
+            height: 60px;
+            background-size: 25px 25px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: $bodybg;
+            position: absolute;
+        }
+
+        &::before {
+            left: -30px;
+            top: -30px;
+        }
+
+        &::after {
+            right: -30px;
+            bottom: -30px;
+        }
+
+        &-link {
+            @extend %main-link;
+
+            font-size: rem(18px);
+            justify-content: flex-start;
+            margin: 0;
+            padding-bottom: rem(8px);
+            width: 227px;
+            margin-top: rem(14px);
+            margin-bottom: rem(20px);
+
+            &::after {
+                height: 22px;
+                width: 22px;
+            }
+        }
+
+        &-policy {
+            font-size: rem(12px);
+            line-height: 130%;
+            color: #a3a3a3;
+            max-width: 365px;
+
+            a {
+                color: $main;
+            }
+        }
     }
 }

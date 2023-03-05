@@ -1,19 +1,127 @@
 .footer {
     &__topbar {
-        border-top: 1px solid #DDD;
-        border-bottom: 1px solid #DDD;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
         padding: rem(42px 0);
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        &-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
     }
 
     &__bottombar {
         padding: rem(16px 0);
-        display: flex;
-        align-items: center;
+
+        &-wrap {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__logo {
+        display: block;
+        margin-bottom: rem(16px);
+
+        &-title {
+            max-width: 170px;
+            font-size: rem(14px);
+            line-height: 140%;
+            color: #989898;
+        }
     }
 
     &__links {
-        margin: auto
+        margin: auto;
+    }
+
+    &__tel {
+        color: $main;
+        text-decoration: none;
+        font-size: rem(24px);
+    }
+
+    &__contact-link {
+        @extend %main-link;
+
+        margin-top: rem(52px);
+        justify-content: flex-start;
+        font-size: rem(14px);
+
+        &::after {
+            height: 22px;
+            width: 22px;
+        }
+
+        &::before {
+            content: none;
+        }
+    }
+
+    &__copyright {
+        font-size: rem(14px);
+        color: #989898;
+    }
+
+    &__link {
+        font-size: rem(14px);
+        color: #989898;
+    }
+}
+
+.footer-menu {
+    &__list {
+        @include unlist();
+
+        display: grid;
+        gap: rem(16px);
+    }
+
+    &__link {
+        font-weight: 500;
+        color: #7e7e7e;
+        text-decoration: none;
+    }
+
+    &__sublist {
+        @include unlist();
+
+        display: grid;
+        gap: rem(16px);
+    }
+}
+
+.top-btn {
+    opacity: 0;
+    transition: 350ms;
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 20px 80px rgba(128 90 70 / 12%);
+        position: fixed;
+        right: 125px;
+        bottom: 50px;
+        transition: 350ms;
+        z-index: 100;
+
+        svg path {
+            transition: 350ms;
+        }
+
+        &:hover {
+            background-color: $main;
+            transition: 350ms;
+
+            svg path {
+                fill: #fff;
+                transition: 350ms;
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@
         padding-top: rem(175px);
         padding-bottom: rem(150px);
         border-bottom: 1px solid #DDD;
+        position: relative;
 
         &::after {
             @extend %bordersymbol;
@@ -35,6 +36,14 @@
                 height: 464px;
                 object-fit: cover;
             }
+        }
+
+        &-controls {
+            @extend %carousel-controls-wrap;
+        }
+
+        &-control {
+            @extend %carousel-control;
         }
     }
 

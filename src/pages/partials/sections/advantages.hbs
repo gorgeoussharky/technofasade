@@ -1,10 +1,10 @@
  <section class="frontpage__advantages advantages">
         <div class="container">
             <div class="advantages__wrap">
-                <h2 class="advantages__heading" data-backtext="Techno Fasade">
+                <h2 class="advantages__heading" data-backtext="Techno Fasade" data-aos="fade-up">
                     Мы производим ставни класса Lux, с вниманием к каждой детали
                 </h2>
-                <div class="advantages__subheading">
+                <div class="advantages__subheading" data-aos="fade-up">
                     <svg
                         width="367"
                         height="107"
@@ -20,7 +20,8 @@
                 </div>
                 <ul class="advantages__list">
                     {{#each data.advantages}}
-                    <li class="advantages__advantage-item advantage-item">
+                    <li class="advantages__advantage-item advantage-item" data-aos="fade-right"
+                    data-aos-delay="{{multiply 100 @index }}">
                         <div class="advantage-item__wrap">
                             {{> picture class="advantage-item__img" src=this.img
                             }}

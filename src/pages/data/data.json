@@ -33,6 +33,9 @@
             "imgs": [
                 "placeholder/house1.jpg",
                 "placeholder/house2.jpg",
+                "placeholder/house3.jpg",
+                "placeholder/house1.jpg",
+                "placeholder/house2.jpg",
                 "placeholder/house3.jpg"
             ],
             "features": [
@@ -112,6 +115,9 @@
             "imgs": [
                 "placeholder/house1.jpg",
                 "placeholder/house2.jpg",
+                "placeholder/house3.jpg",
+                "placeholder/house1.jpg",
+                "placeholder/house2.jpg",
                 "placeholder/house3.jpg"
             ],
             "features": [
@@ -189,6 +195,9 @@
             "type": "Горизонтальные",
             "title": "Планки",
             "imgs": [
+                "placeholder/house1.jpg",
+                "placeholder/house2.jpg",
+                "placeholder/house3.jpg",
                 "placeholder/house1.jpg",
                 "placeholder/house2.jpg",
                 "placeholder/house3.jpg"
@@ -277,15 +286,43 @@
         "placeholder/variation1.jpg",
         "placeholder/variation2.jpg",
         "placeholder/variation3.jpg",
+        "placeholder/variation4.jpg",
+        "placeholder/variation1.jpg",
+        "placeholder/variation2.jpg",
+        "placeholder/variation3.jpg",
         "placeholder/variation4.jpg"
     ],
     "portfolio": [
         "placeholder/variation1.jpg",
         "placeholder/variation2.jpg",
         "placeholder/variation3.jpg",
+        "placeholder/variation4.jpg",
+        "placeholder/variation1.jpg",
+        "placeholder/variation2.jpg",
+        "placeholder/variation3.jpg",
         "placeholder/variation4.jpg"
     ],
     "testimonials": [
+        {
+            "img": "placeholder/user1.jpg",
+            "title": "Анна Гладких",
+            "date": "18.09.22"
+        },
+        {
+            "img": "placeholder/user2.jpg",
+            "title": "Алексей Иванов",
+            "date": "22.09.22"
+        },
+        {
+            "img": "placeholder/user3.jpg",
+            "title": "Диана Горшкова",
+            "date": "30.09.22"
+        },
+        {
+            "img": "placeholder/user1.jpg",
+            "title": "Анна Гладких",
+            "date": "31.09.22"
+        },
         {
             "img": "placeholder/user1.jpg",
             "title": "Анна Гладких",
@@ -322,6 +359,36 @@
             "img": "placeholder/news3.jpg",
             "title": "Заголовок новости в пределах 2-х строк. При необходимости можно в 3 строки",
             "date": "30.09.22"
+        }
+    ],
+    "footer_menu": [
+        {
+            "label": "Продукция"
+        },
+        {
+            "label": "Примеры работ"
+        },
+        {
+            "label": "Монтаж"
+        },
+        {
+            "label": "Сотрудничество"
+        },
+        {
+            "label": "Контакты"
+        }
+    ],
+    "footer_menu2": [
+        {
+            "label": "О компании",
+            "submenu": [
+                {
+                    "label": "Отзывы"
+                },
+                {
+                    "label": "Сертификаты"
+                }
+            ]
         }
     ]
 }

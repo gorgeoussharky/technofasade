@@ -1,78 +1,96 @@
+<button class="top-btn">
+    <div class="top-btn__wrap">
+        <svg width="38" height="29" viewBox="0 0 38 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 9.39551L38 28.1119L19 15.9179L8.18121e-07 28.1119L19 9.39551Z" fill="black" />
+            <path d="M19.001 0.888061L32.8965 15.0672L19.001 6.27612L5.10547 15.0672L19.001 0.888061Z" fill="black" />
+        </svg>
+    </div>
+</button>
+
 <footer class='footer'>
     <div class="footer__wrap">
 
         <div class="footer__topbar">
-            <div class="footer__col">
-                <a href="" class="footer__logo">
-                    {{>picture src="logo.png" }}
-                </a>
+            <div class="container">
+                <div class="footer__topbar-wrap">
+                    <div class="footer__col">
+                        <a href="" class="footer__logo">
+                            {{>picture src="logo.png" }}
+                        </a>
 
-                <div class="footer__logo-title">
-                    Декоративные ставни и комплектующее для окон
-                </div>
-            </div>
+                        <div class="footer__logo-title">
+                            Декоративные ставни и комплектующее для окон
+                        </div>
+                    </div>
 
-            <div class="footer__col">
-                <div class="footer__footer-menu footer-menu">
-                    <ul class="footer-menu__list">
-                        {{#each data.footer_menu }}
-                        <li class="footer-menu__item">
-                            <a href="" class="footer-menu__link">
-                                {{this}}
-                            </a>
-                        </li>
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer__col">
-                <div class="footer__footer-menu footer-menu">
-                    <ul class="footer-menu__list">
-                        {{#each data.footer_menu }}
-                        <li class="footer-menu__item">
-                            <a href="" class="footer-menu__link">
-                                {{this}}
-                            </a>
-
-                            <ul class="footer-menu__sublist">
-                                {{#each this.submenu }}
-                                <li class="footer-menu__subitem">
-                                    <a href="" class="footer-menu__sublink">
-                                        {{this}}
+                    <div class="footer__col">
+                        <div class="footer__footer-menu footer-menu">
+                            <ul class="footer-menu__list">
+                                {{#each data.footer_menu }}
+                                <li class="footer-menu__item">
+                                    <a href="" class="footer-menu__link">
+                                        {{this.label}}
                                     </a>
                                 </li>
                                 {{/each}}
                             </ul>
-                        </li>
-                        {{/each}}
-                    </ul>
-
-                </div>
-
-                <div class="footer__col">
-                    <a href="" class="footer__tel">
-                        +7 (999) 999 99 99
-                    </a>
-                    <a href="" class="footer__email">
-                        technofasade@mail.ru
-                    </a>
-                    <div class="footer__address">
-                        г. Москва, Ново-Совхозная улица, 3
-                    </div>
-                    <div class="footer__worktime">
-                        Пн. - Пт. 9:00-20:00
+                        </div>
                     </div>
 
-                    <a href="" class="footer__link">
-                        Оставить заявку
-                    </a>
+                    <div class="footer__col">
+                        <div class="footer__footer-menu footer-menu">
+                            <ul class="footer-menu__list">
+                                {{#each data.footer_menu2 }}
+                                <li class="footer-menu__item">
+                                    <a href="" class="footer-menu__link">
+                                        {{this.label}}
+                                    </a>
+
+                                    <ul class="footer-menu__sublist">
+                                        {{#each this.submenu }}
+                                        <li class="footer-menu__subitem">
+                                            <a href="" class="footer-menu__sublink">
+                                                {{this.label}}
+                                            </a>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                </li>
+                                {{/each}}
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="footer__col">
+                        <a href="" class="footer__tel">
+                            +7 (999) 999 99 99
+                        </a>
+                        <a href="" class="footer__email">
+                            technofasade@mail.ru
+                        </a>
+                        <div class="footer__address">
+                            г. Москва, Ново-Совхозная улица, 3
+                        </div>
+                        <div class="footer__worktime">
+                            Пн. - Пт. 9:00-20:00
+                        </div>
+
+                        <a href="" class="footer__contact-link">
+                            Оставить заявку
+                        </a>
+                    </div>
+
+
                 </div>
 
             </div>
+        </div>
 
-            <div class="footer__bottombar">
-                <div class="container">
+
+        <div class="footer__bottombar">
+            <div class="container">
+                <div class="footer__bottombar-wrap">
                     <div class="footer__copyright">
                         ©2022 Techno Fasade, декоративные ставни
                     </div>

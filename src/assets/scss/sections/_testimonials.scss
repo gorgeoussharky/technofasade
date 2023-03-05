@@ -2,7 +2,9 @@
     &__wrap {
         padding-top: rem(160px);
         padding-bottom: rem(160px);
-
+        position: relative;
+        border-bottom: 1px solid #DDD;
+        
         &::after {
             @extend %bordersymbol;
         }

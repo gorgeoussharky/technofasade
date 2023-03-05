@@ -3,6 +3,7 @@
         padding-top: rem(170px);
         padding-bottom: rem(150px);
         border-bottom: 1px solid #ddd;
+        position: relative;
 
         &::after {
             @extend %bordersymbol;
