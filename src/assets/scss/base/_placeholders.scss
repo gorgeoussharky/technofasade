@@ -57,6 +57,11 @@
         background-position: center;
         background-repeat: no-repeat;
         display: block;
+
+        @include media-breakpoint-down(lg) {
+            width: 18px;
+            height: 18px;
+        }
     }
 
     &::before {
@@ -82,6 +87,10 @@
     margin: auto;
     cursor: none;
 
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+
     button {
         cursor: none;
     }
@@ -93,4 +102,31 @@
     position: absolute;
     transition: transform 350ms, opacity 350ms;
     opacity: 0;
+}
+
+%carousel-counter {
+    @extend .container;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    margin: auto;
+    z-index: 10;
+    color: #fff;
+    font-weight: 500;
+    font-size: rem(24px);
+
+    @include media-breakpoint-down(lg) {
+        font-size: rem(24px);
+        bottom: 30px;
+    }
+
+    span {
+        font-size: rem(64px);
+
+        @include media-breakpoint-down(lg) {
+            font-size: rem(64px);
+        }
+    }
 }

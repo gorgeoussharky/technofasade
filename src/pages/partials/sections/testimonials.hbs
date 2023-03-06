@@ -11,9 +11,10 @@
             </h2>
 
             <div class="testimonials__carousel swiper">
-                <ul class="testiomonials__carousel-list swiper-wrapper">
+                <ul class="testimonials__carousel-list swiper-wrapper">
                     {{#each data.testimonials}}
-                    <li class="testimonials__testimonial-item testimonial-item swiper-slide" data-aos="fade-right" data-aos-delay="{{multiply 100 @index }}">
+                    <li class="testimonials__testimonial-item testimonial-item swiper-slide" data-aos="fade-right"
+                        data-aos-delay="{{multiply 100 @index }}">
                         <div class="testimonial-item__wrap">
                             {{> picture class="testimonial-item__img"
                             src=this.img }}
@@ -43,24 +44,19 @@
                     {{/each}}
                 </ul>
 
-                 <div class="portfolio__carousel-controls" >
-                    <button class="portfolio__carousel-control">
+                <div class="testimonials__carousel-controls" data-animate-controls>
+                    <button class="testimonials__carousel-control" data-control data-direction="next">
                         <svg width="48" height="67" viewBox="0 0 48 67" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M33 33.5L0 67L21.5 33.5L0 0L33 33.5Z" fill="white" />
-                            <path d="M48 33.5L23 58L38.5 33.5L23 9L48 33.5Z" fill="white" />
-                        </svg>
-                    </button>
-
-                    <button class="portfolio__carousel-control portfolio__carousel-control--prev">
-                        <svg width="48" height="67" viewBox="0 0 48 67" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M33 33.5L0 67L21.5 33.5L0 0L33 33.5Z" fill="white" />
-                            <path d="M48 33.5L23 58L38.5 33.5L23 9L48 33.5Z" fill="white" />
+                            <path d="M33 33.5L0 67L21.5 33.5L0 0L33 33.5Z" fill="#CB9274" />
+                            <path d="M48 33.5L23 58L38.5 33.5L23 9L48 33.5Z" fill="#CB9274" />
                         </svg>
                     </button>
                 </div>
             </div>
 
-            <a href="" class="testimonials__link" data-aos="fade-up"> Все отзывы </a>
+            <div data-aos="fade-up">
+                <a href="" class="testimonials__link"> Все отзывы </a>
+            </div>
         </div>
     </div>
 </section>

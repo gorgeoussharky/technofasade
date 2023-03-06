@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const topBtn = document.querySelector('.top-btn') as HTMLElement | undefined
+    const topBtn = document.querySelector('.top-btn__toggle') as HTMLElement | undefined
 
     if (!topBtn) return
 
@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const bodyHeight = document.body.offsetHeight
 
         if (window.scrollY > bodyHeight / 2) {
-            topBtn.style.opacity = '1'
+            topBtn.classList.add('top-btn__toggle--visible')
             return
         }
 
-        topBtn.style.opacity = '0'
+        topBtn.classList.remove('top-btn__toggle--visible')
     })
 
     topBtn?.addEventListener('click', () => {

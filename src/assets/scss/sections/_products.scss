@@ -2,11 +2,19 @@
     &__wrap {
         padding-top: rem(132px);
         padding-bottom: rem(80px);
+
+        @include media-breakpoint-down(lg) {
+            padding: rem(80px 0);
+        }
     }
 
     &__heading {
         text-align: center;
-        padding-bottom: rem(140px);
+        margin-bottom: rem(140px);
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: rem(32px);
+        }
 
         &::before {
             top: -50px;
@@ -18,6 +26,14 @@
 
         display: grid;
         gap: rem(200px);
+
+        @include media-breakpoint-down(lg) {
+            gap: rem(32px);
+        }
+    }
+
+    &__product-item {
+        min-width: 1px;
     }
 }
 
@@ -26,6 +42,10 @@
         background-color: #fff;
         padding-top: rem(100px);
         padding-bottom: rem(120px);
+
+        @include media-breakpoint-down(lg) {
+            padding: rem(32px 0);
+        }
     }
 
     &__head {
@@ -34,6 +54,18 @@
         grid-template-columns: auto 520px;
         gap: rem(64px);
         margin-bottom: rem(80px);
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            gap: rem(32px);
+            text-align: center;
+            margin: auto;
+            margin-bottom: rem(32px);
+        }
+
+        @include media-breakpoint-down(md) {
+            max-width: 300px;
+        }
     }
 
     &__title {
@@ -43,6 +75,10 @@
         text-transform: none;
         line-height: 1;
         width: fit-content;
+
+        @include media-breakpoint-down(lg) {
+            margin: auto;
+        }
 
         &:hover {
             span {
@@ -61,6 +97,10 @@
             text-decoration: underline;
             transition: 350ms;
 
+            @include media-breakpoint-down(lg) {
+                margin-top: rem(12px);
+            }
+
             &::after {
                 content: '';
                 background-image: url("data:image/svg+xml,%3Csvg width='25' height='30' viewBox='0 0 25 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 15L0 30L8.25 15L0 0L15 15Z' fill='%23CB9274'/%3E%3Cpath d='M24.6445 15L9.64453 30L17.8945 15L9.64453 0L24.6445 15Z' fill='%23CB9274'/%3E%3C/svg%3E%0A");
@@ -70,12 +110,23 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 display: block;
+
+                @include media-breakpoint-down(lg) {
+                    width: 20px;
+                    height: 20px;
+                }
             }
         }
     }
 
     &__carousel {
         overflow: visible;
+
+        @include media-breakpoint-down(lg) {
+            width: calc(100% + 24px);
+            left: rem(-12px);
+            overflow: hidden;
+        }
 
         &-wrap {
             @include unlist();
@@ -103,6 +154,14 @@
                 width: 100%;
                 height: 660px;
                 object-fit: cover;
+
+                @include media-breakpoint-down(lg) {
+                    height: 400px;
+                }
+
+                @include media-breakpoint-down(md) {
+                    height: 250px;
+                }
             }
         }
 
@@ -116,21 +175,7 @@
     }
 
     &__carousel-counter {
-        @extend .container;
-
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 50px;
-        margin: auto;
-        z-index: 10;
-        color: #fff;
-        font-weight: 500;
-        font-size: rem(24px);
-
-        span {
-            font-size: rem(64px);
-        }
+        @extend %carousel-counter;
     }
 
     &__product-features {
@@ -143,9 +188,20 @@
         margin-top: rem(80px);
         font-size: rem(20px);
 
+        @include media-breakpoint-down(md) {
+            font-size: rem(16px);
+            margin-top: rem(40px);
+            width: 100%;
+        }
+
         &::after {
             width: 30px;
             height: 30px;
+
+            @include media-breakpoint-down(lg) {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 }
@@ -162,6 +218,10 @@
 
         display: grid;
         gap: rem(32px);
+
+        @include media-breakpoint-down(lg) {
+            gap: rem(16px);
+        }
     }
 }
 
@@ -177,8 +237,17 @@
         padding: rem(16px 0);
         text-align: left;
 
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            font-size: rem(20px);
+        }
+
         &--optional {
             grid-template-columns: 1fr 1fr 2fr;
+
+            @include media-breakpoint-down(lg) {
+                grid-template-columns: 2fr 1fr;
+            }
         }
     }
 
@@ -199,6 +268,12 @@
             top: 0;
             bottom: 0;
             margin: auto;
+            transition: 350ms;
+
+            @include media-breakpoint-down(lg) {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 
@@ -206,6 +281,10 @@
         font-weight: 600;
         display: flex;
         flex-wrap: wrap;
+
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
     }
 
     &__value-item {
@@ -225,10 +304,19 @@
         height: 24px;
         transform: rotate(45deg);
         margin-left: rem(8px);
+
+        @include media-breakpoint-down(xxl) {
+            width: 18px;
+            height: 18px;
+        }
     }
 
     &__notice {
         color: $main;
+
+        @include media-breakpoint-down(lg) {
+            text-align: right;
+        }
     }
 
     &__content {
@@ -237,19 +325,37 @@
         padding: rem(30px 0);
         gap: rem(40px);
 
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include media-breakpoint-down(md) {
+            gap: rem(20px);
+        }
+
         &--2 {
             .feature-item__content-item:nth-of-type(2) {
                 grid-column: 3 / 3;
+
+                @include media-breakpoint-down(lg) {
+                    grid-column: auto;
+                }
             }
         }
     }
 
     &__content-item {
+        margin-bottom: 0;
+
         &-img {
             width: 100%;
             height: 310px;
             margin-bottom: rem(10px);
             display: block;
+
+            @include media-breakpoint-down(lg) {
+                height: 200px;
+            }
 
             img {
                 width: 100%;

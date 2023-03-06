@@ -2,7 +2,11 @@
     &__wrap {
         padding: rem(160px 0);
         position: relative;
-        border-bottom: 1px solid #DDD;
+        border-bottom: 1px solid #ddd;
+
+        @include media-breakpoint-down(lg) {
+            padding: rem(80px 0);
+        }
 
         &::after {
             @extend %bordersymbol;
@@ -12,6 +16,10 @@
     &__heading {
         margin-bottom: rem(140px);
         text-align: center;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: rem(64px);
+        }
 
         &::before {
             width: 70%;
@@ -26,6 +34,30 @@
         grid-template-columns: auto 500px;
         gap: rem(80px);
         margin-bottom: rem(70px);
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            gap: rem(32px);
+            text-align: center;
+            margin: auto;
+            margin-bottom: rem(32px);
+        }
+
+        @include media-breakpoint-down(md) {
+            max-width: 300px;
+        }
+    }
+
+    &__video {
+        height: 790px;
+
+        @include media-breakpoint-down(lg) {
+            height: 500px;
+        }
+
+        @include media-breakpoint-down(md) {
+            height: 300px;
+        }
     }
 
     &__subheading {
@@ -37,5 +69,10 @@
 
         margin-top: rem(80px);
         width: 270px;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            margin-top: rem(40px);
+        }
     }
 }

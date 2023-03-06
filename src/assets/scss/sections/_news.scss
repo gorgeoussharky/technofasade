@@ -5,6 +5,10 @@
         border-bottom: 1px solid #ddd;
         position: relative;
 
+        @include media-breakpoint-down(lg) {
+            padding: rem(80px 0);
+        }
+
         &::after {
             @extend %bordersymbol;
         }
@@ -13,6 +17,10 @@
     &__heading {
         margin-bottom: rem(120px);
         text-align: center;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: rem(64px);
+        }
 
         &::before {
             width: 70%;
@@ -28,6 +36,11 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: rem(84px);
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            gap: rem(48px)
+        }
     }
 
     &__link {
@@ -35,6 +48,11 @@
 
         width: 180px;
         margin-top: rem(80px);
+
+        @include media-breakpoint-down(lg) {
+            margin-top: rem(40px);
+            width: 100%;
+        }
     }
 }
 
@@ -44,6 +62,10 @@
         width: 100%;
         height: 320px;
         margin-bottom: rem(24px);
+
+        @include media-breakpoint-down(md) {
+            height: 200px;
+        }
 
         img {
             width: 100%;
@@ -57,6 +79,10 @@
 
         margin-bottom: rem(20px);
         height: 90px;
+
+        @include media-breakpoint-down(lg) {
+            height: auto;
+        }
     }
 
     &__date {

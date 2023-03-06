@@ -1,6 +1,10 @@
 .hero {
     &__wrap {
         padding: rem(70px 0);
+
+        @include media-breakpoint-down(lg) {
+            padding: rem(32px 0);
+        }
     }
 
     &__head {
@@ -9,16 +13,33 @@
         grid-template-columns: auto 490px;
         gap: rem(64px);
         margin-bottom: rem(84px);
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            gap: rem(32px);
+            text-align: center;
+            margin: auto;
+            margin-bottom: rem(32px);
+        }
+
+        @include media-breakpoint-down(md) {
+            max-width: 300px;
+        }
     }
 
     &__heading {
         margin-bottom: 0;
+
     }
 
     &__desc {
         max-width: 490px;
         margin-left: auto;
         line-height: rem(30px);
+
+        @include media-breakpoint-down(lg) {
+            margin: auto;
+        }
     }
 
 }
@@ -49,6 +70,15 @@
             width: 100%;
             height: calc(100vh - 350px);
             object-fit: cover;
+
+
+            @include media-breakpoint-down(xxl) {
+                height: 400px;
+            }
+
+            @include media-breakpoint-down(md) {
+               height: 300px;
+            }
         }
     }
 
@@ -62,16 +92,8 @@
     }
 
     &__counter {
-        @extend .container;
+        @extend %carousel-counter;
 
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 50px;
-        margin: auto;
-        z-index: 10;
-        color: #fff;
-        font-weight: 500;
         font-size: rem(40px);
 
         span {

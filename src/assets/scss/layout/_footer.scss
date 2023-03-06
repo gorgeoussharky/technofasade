@@ -4,9 +4,23 @@
         border-bottom: 1px solid #ddd;
         padding: rem(42px 0);
 
+        @include media-breakpoint-down(lg) {
+            padding: rem(24px 0);
+        }
+
         &-wrap {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
+
+            @include media-breakpoint-down(lg) {
+                grid-template-columns: 1fr 1fr;
+                gap: rem(32px);
+            }
+
+            @include media-breakpoint-down(md) {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
     }
 
@@ -16,6 +30,11 @@
         &-wrap {
             display: flex;
             align-items: center;
+
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+                gap: rem(12px);
+            }
         }
     }
 
@@ -23,11 +42,21 @@
         display: block;
         margin-bottom: rem(16px);
 
+        @include media-breakpoint-down(lg) {
+            img {
+                width: 100px;
+            }
+        }
+
         &-title {
             max-width: 170px;
             font-size: rem(14px);
             line-height: 140%;
             color: #989898;
+
+            @include media-breakpoint-down(md) {
+                margin: auto;
+            }
         }
     }
 
@@ -38,7 +67,14 @@
     &__tel {
         color: $main;
         text-decoration: none;
+        font-weight: 500;
+        display: block;
         font-size: rem(24px);
+    }
+
+    &__email {
+        color: $main;
+        display: block;
     }
 
     &__contact-link {
@@ -47,6 +83,10 @@
         margin-top: rem(52px);
         justify-content: flex-start;
         font-size: rem(14px);
+
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
 
         &::after {
             height: 22px;
@@ -74,10 +114,10 @@
         @include unlist();
 
         display: grid;
-        gap: rem(16px);
+        gap: rem(8px);
     }
 
-    &__link {
+    &__link, &__sublink {
         font-weight: 500;
         color: #7e7e7e;
         text-decoration: none;
@@ -87,15 +127,13 @@
         @include unlist();
 
         display: grid;
-        gap: rem(16px);
+        gap: rem(8px);
+        margin-top: rem(8px);
     }
 }
 
 .top-btn {
-    opacity: 0;
-    transition: 350ms;
-
-    &__wrap {
+    &__toggle {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -105,10 +143,24 @@
         background: #fff;
         box-shadow: 0 20px 80px rgba(128 90 70 / 12%);
         position: fixed;
-        right: 125px;
-        bottom: 50px;
+        right: 150px;
+        bottom: 200px;
         transition: 350ms;
         z-index: 100;
+        pointer-events: none;
+        opacity: 0;
+
+        @include media-breakpoint-down(xxl) {
+            width: 50px;
+            height: 50px;
+            right: 20px;
+            bottom: 90px;
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
 
         svg path {
             transition: 350ms;
@@ -122,6 +174,12 @@
                 fill: #fff;
                 transition: 350ms;
             }
+        }
+
+        &--visible {
+            opacity: 1;
+            pointer-events: all;
+            transition: 350ms;
         }
     }
 }

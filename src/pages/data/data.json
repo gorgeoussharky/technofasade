@@ -2,6 +2,9 @@
     "hero_carousel": [
         "placeholder/house1.jpg",
         "placeholder/house2.jpg",
+        "placeholder/house3.jpg",
+        "placeholder/house1.jpg",
+        "placeholder/house2.jpg",
         "placeholder/house3.jpg"
     ],
     "advantages": [
@@ -31,6 +34,12 @@
             "type": "Ставни",
             "title": "Жалюзи",
             "imgs": [
+                "placeholder/house1.jpg",
+                "placeholder/house2.jpg",
+                "placeholder/house3.jpg",
+                "placeholder/house1.jpg",
+                "placeholder/house2.jpg",
+                "placeholder/house3.jpg",
                 "placeholder/house1.jpg",
                 "placeholder/house2.jpg",
                 "placeholder/house3.jpg",

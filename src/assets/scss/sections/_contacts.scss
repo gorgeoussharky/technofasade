@@ -3,6 +3,10 @@
         padding-top: rem(150px);
         padding-bottom: rem(150px);
         position: relative;
+
+        @include media-breakpoint-down(lg) {
+            padding: rem(80px 0);
+        }
     }
 
     &__heading {
@@ -35,6 +39,10 @@
         display: grid;
         grid-template-columns: auto 500px;
         gap: rem(64px);
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__form {
@@ -77,9 +85,19 @@
             margin-top: rem(14px);
             margin-bottom: rem(20px);
 
+            @include media-breakpoint-down(lg) {
+                width: 100%;
+                justify-content: center;
+            }
+
             &::after {
                 height: 22px;
                 width: 22px;
+
+                @include media-breakpoint-down(lg) {
+                    width: 18px;
+                    height: 18px;
+                }
             }
         }
 

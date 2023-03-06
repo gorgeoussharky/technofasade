@@ -4,6 +4,15 @@ h1 {
     font-family: Cormorant, serif;
     text-transform: uppercase;
     line-height: rem(70px);
+
+    @include media-breakpoint-down(xxl) {
+        font-size: rem(48px);
+        line-height: normal;
+    }
+
+    @include media-breakpoint-down(lg) {
+        font-size: rem(32px);
+    }
 }
 
 h2 {

@@ -1,8 +1,12 @@
- .about-us {
+.about-us {
     &__wrap {
         padding: rem(160px 0);
         position: relative;
-        border-bottom: 1px solid #DDD;
+        border-bottom: 1px solid #ddd;
+
+        @include media-breakpoint-down(lg) {
+            padding: rem(80px 0);
+        }
 
         &::after {
             @extend %bordersymbol;
@@ -12,6 +16,10 @@
     &__heading {
         margin-bottom: rem(120px);
         text-align: center;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: rem(64px);
+        }
 
         &::before {
             width: 70%;
@@ -26,6 +34,18 @@
         grid-template-columns: auto 500px;
         gap: rem(80px);
         margin-bottom: rem(76px);
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            gap: rem(32px);
+            text-align: center;
+            margin: auto;
+            margin-bottom: rem(32px);
+        }
+
+        @include media-breakpoint-down(md) {
+            max-width: 300px;
+        }
     }
 
     &__subheading {
@@ -37,8 +57,13 @@
 
         width: 170px;
         margin-top: rem(80px);
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            margin-top: rem(40px);
+        }
     }
- }
+}
 
 .our-advantages {
     &__list {
@@ -48,11 +73,22 @@
         grid-template-columns: 1fr 1fr 1fr;
         border-top: 1px solid #ddd;
         border-bottom: 1px solid #ddd;
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            border: none;
+        }
     }
 
     &__item {
         padding: rem(68px 74px);
         position: relative;
+
+        @include media-breakpoint-down(lg) {
+            padding: rem(48px 32px);
+            border: none;
+            border-top: 1px solid #ddd;
+        }
 
         &-title {
             font-size: rem(36px);
@@ -61,7 +97,8 @@
             margin-bottom: rem(24px);
         }
 
-        &::before, &::after {
+        &::before,
+        &::after {
             background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3.53553' y='12.6797' width='11.5219' height='11.5219' transform='rotate(-45 3.53553 12.6797)' stroke='%23DDD' stroke-width='5'/%3E%3C/svg%3E%0A");
             width: 60px;
             height: 60px;
@@ -71,15 +108,19 @@
             background-color: $bodybg;
             position: absolute;
             z-index: 10;
+
+            @include media-breakpoint-down(lg) {
+                display: none;
+            }
         }
 
-        &:nth-of-type(1) {    
+        &:nth-of-type(1) {
             &::before {
                 content: '';
                 right: -30px;
                 top: -30px;
             }
-    
+
             &::after {
                 content: '';
                 right: -30px;
@@ -88,17 +129,22 @@
         }
 
         &:nth-of-type(2) {
-            border-left:  1px solid #ddd;
-            border-right:  1px solid #ddd;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+
+            @include media-breakpoint-down(lg) {
+                border-left: none;
+                border-right: none
+            }
         }
 
-        &:nth-of-type(3) {    
+        &:nth-of-type(3) {
             &::before {
                 content: '';
                 left: -30px;
                 top: -30px;
             }
-    
+
             &::after {
                 content: '';
                 left: -30px;

@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const instance = new Swiper(carousel as HTMLElement, {
             slidesPerView: 1,
             loop: true,
+            centeredSlides: true,
             on: {
                 init({ slides }) {
                     if (!counter) return
@@ -88,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const instance = new Swiper(carousel as HTMLElement, {
             slidesPerView: 2,
             loop: true,
+            centeredSlides: true,
         })
 
         control?.addEventListener('click', () => {
@@ -101,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const instance = new Swiper(carousel as HTMLElement, {
             slidesPerView: 2,
             loop: true,
+            centeredSlides: true,
         })
 
         control?.addEventListener('click', () => {
@@ -109,10 +112,22 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     testimonialsCarousels.forEach((carousel) => {
+        const control = carousel.querySelector('.testimonials__carousel-control') as HTMLButtonElement | undefined
+
         const instance = new Swiper(carousel as HTMLElement, {
-            slidesPerView: 2,
+            slidesPerView: 1,
+            spaceBetween: 20,
             loop: true,
-            spaceBetween: 40,
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                }
+            }
+        })
+
+        control?.addEventListener('click', () => {
+            controlClickHandler(control, instance)
         })
     })
 })
