@@ -67,8 +67,10 @@
                                         <span class="feature-item__values">
                                             {{#each this.values}}
                                             <span class="feature-item__value-item">
-                                                <span {{#if this.color}} class="feature-item__color" {{/if}}
+                                                {{#if this.color}} 
+                                                <span class="feature-item__color"
                                                     style="background: {{this.color}};"></span>
+                                                {{/if}}
                                                 {{this.title}}
                                             </span>
                                             {{/each}}

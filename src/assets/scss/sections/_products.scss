@@ -236,6 +236,7 @@
         font-size: rem(24px);
         padding: rem(16px 0);
         text-align: left;
+        color: #000;
 
         @include media-breakpoint-down(lg) {
             grid-template-columns: 1fr;
