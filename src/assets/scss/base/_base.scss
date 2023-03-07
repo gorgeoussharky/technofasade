@@ -1,7 +1,6 @@
-html {  
+html {
     scrollbar-width: thin;
     scrollbar-color: $bodybg $main;
-
 
     @include media-breakpoint-down(xxl) {
         font-size: rem(12px);
@@ -14,11 +13,6 @@ html {
     @include media-breakpoint-down(md) {
         font-size: 13px;
     }
-
-    @include media-breakpoint-down(sm) {
-        font-size: 12px;
-    }
-
 
     &::-webkit-scrollbar {
         width: 4px;
@@ -39,7 +33,7 @@ html {
     overflow: hidden;
     padding-right: 0;
 
-    @media (hover:hover) {
+    @media (hover: hover) {
         padding-right: 4px;
     }
 }
@@ -49,31 +43,6 @@ body {
     line-height: rem(30px);
     background: #fffcf8;
     overflow-x: hidden;
-}
-
-
-[data-backtext] {
-    position: relative;
-
-    &::before {
-        content: attr(data-backtext);
-        position: absolute;
-        top: -100px;
-        left: 0;
-        font-family: Gilroy, sans-serif;
-        font-size: rem(100px);
-        line-height: 1;
-        font-weight: 500;
-        color: #f5eded;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        z-index: -1;
-        text-align: center;
-
-        @include media-breakpoint-down(lg) {
-            display: none;
-        }
-    }
 }
 
 .frontpage {

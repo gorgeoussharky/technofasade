@@ -1,4 +1,6 @@
-import Swiper from 'swiper'
+import Swiper, { Navigation } from 'swiper'
+
+const speed = 750
 
 const updateCounter = (slides: HTMLElement[], counter: HTMLElement, currentIndex?: number) => {
     const total = slides.length.toString().padStart(2, '0')
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const instance = new Swiper(carousel as HTMLElement, {
             slidesPerView: 1,
             loop: true,
+            speed,
             on: {
                 init({ slides }) {
                     if (!counter) return
@@ -64,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slidesPerView: 1,
             loop: true,
             centeredSlides: true,
+            speed,
             on: {
                 init({ slides }) {
                     if (!counter) return
@@ -89,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const instance = new Swiper(carousel as HTMLElement, {
             slidesPerView: 2,
             loop: true,
+            speed,
             centeredSlides: true,
         })
 
@@ -103,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const instance = new Swiper(carousel as HTMLElement, {
             slidesPerView: 2,
             loop: true,
+            speed,
             centeredSlides: true,
         })
 
@@ -112,22 +118,28 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     testimonialsCarousels.forEach((carousel) => {
-        const control = carousel.querySelector('.testimonials__carousel-control') as HTMLButtonElement | undefined
+        const prevEl = carousel.querySelector('.testimonials__carousel-control--prev') as HTMLButtonElement | undefined
+        const nextEl =  carousel.querySelector('.testimonials__carousel-control--next') as HTMLButtonElement | undefined
 
         const instance = new Swiper(carousel as HTMLElement, {
             slidesPerView: 1,
             spaceBetween: 20,
             loop: true,
+            modules: [Navigation],
+            navigation: {
+                prevEl,
+                nextEl
+            },
             breakpoints: {
                 768: {
+                    spaceBetween: 20,
+                    slidesPerView: 2,
+                },
+                1024: {
                     slidesPerView: 2,
                     spaceBetween: 40,
                 }
             }
-        })
-
-        control?.addEventListener('click', () => {
-            controlClickHandler(control, instance)
         })
     })
 })

@@ -14,15 +14,12 @@
         gap: rem(64px);
         margin-bottom: rem(84px);
 
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-down(md) {
             grid-template-columns: 1fr;
             gap: rem(32px);
             text-align: center;
             margin: auto;
             margin-bottom: rem(32px);
-        }
-
-        @include media-breakpoint-down(md) {
             max-width: 300px;
         }
     }

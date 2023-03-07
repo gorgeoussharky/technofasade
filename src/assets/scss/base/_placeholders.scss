@@ -130,3 +130,28 @@
         }
     }
 }
+
+
+%backtext {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    font-family: Gilroy, sans-serif;
+    font-size: rem(100px);
+    line-height: 1;
+    font-weight: 500;
+    color: #f5eded;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: -1;
+    text-align: center;
+
+    @include media-breakpoint-down(lg) {
+        font-size: rem(60px);
+        top: -40px;
+    }
+
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}

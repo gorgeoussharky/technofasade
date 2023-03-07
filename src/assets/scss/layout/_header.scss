@@ -18,8 +18,7 @@
         }
 
         @include media-breakpoint-down(lg) {
-            width: calc(100% - 24px);
-            flex-direction: row-reverse;
+            width: calc(100% - 20px);
         }
     }
 
@@ -134,12 +133,31 @@
         margin-left: rem(40px);
 
         @include media-breakpoint-down(lg) {
-            display: none;
+            font-size: 0;
+            position: relative;
+            width: 20px;
+            height: 20px;
+
+            &::before {
+                content: '';
+                background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_523_1048)'%3E%3Cpath d='M17.5854 13.4994L15.199 11.113C14.3468 10.2608 12.8979 10.6017 12.557 11.7096C12.3013 12.4767 11.449 12.9028 10.682 12.7323C8.97745 12.3062 6.67632 10.0903 6.25019 8.30054C5.99451 7.53346 6.50587 6.68119 7.27291 6.42554C8.38086 6.08463 8.72177 4.63578 7.8695 3.78351L5.48315 1.39715C4.80133 0.80056 3.77861 0.80056 3.18202 1.39715L1.5627 3.01646C-0.0566102 4.721 1.73316 9.23803 5.73883 13.2437C9.7445 17.2494 14.2615 19.1244 15.9661 17.4198L17.5854 15.8005C18.182 15.1187 18.182 14.096 17.5854 13.4994Z' stroke='black' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_523_1048'%3E%3Crect width='19' height='19' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                display: block;
+                left: 0;
+                top: 0;
+            }
         }
 
         span {
             font-weight: 600;
             font-size: rem(24px);
+
+            @include media-breakpoint-down(lg) {
+                font-size: 0;
+            }
         }
     }
 
@@ -193,6 +211,16 @@
             left: -225px;
             bottom: -230px;
 
+            @media (max-width: 1700px) {
+                left: -150px;
+                bottom: -150px;
+            }
+
+            @include media-breakpoint-down(xl) {
+                left: -100px;
+                bottom: -100px;
+            }
+
             @include media-breakpoint-down(lg) {
                 left: -60px;
                 bottom: 5vh;
@@ -222,8 +250,16 @@
         .header__tel {
             font-size: rem(16px);
 
+            @include media-breakpoint-down(lg) {
+                font-size: 0;
+            }
+
             span {
                 font-size: rem(22px);
+
+                @include media-breakpoint-down(lg) {
+                    font-size: 0;
+                }
             }
         }
 
@@ -232,7 +268,6 @@
             font-size: rem(18px);
         }
     }
-
 
     &--slide-in {
         animation: slide-in 300ms linear;
@@ -262,15 +297,22 @@
             width: 405px;
             height: 220px;
             background-size: contain;
+            background-repeat: no-repeat;
             position: absolute;
             left: 0;
             bottom: 150px;
 
-            @media (max-height: 800px) {
+            @include media-breakpoint-down(xxl) {
+                width: 350px;
+                height: 150px;
+                bottom: 100px;
+            }
+
+            @media (max-height: 600px) {
                 display: none;
             }
 
-            @include media-breakpoint-down(xxl) {
+            @include media-breakpoint-down(lg) {
                 display: none;
             }
         }
@@ -369,7 +411,15 @@
             width: 330px;
             height: 150px;
             background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
             position: absolute;
+
+            @include media-breakpoint-down(xl) {
+                width: 280px;
+                height: 120px;
+                left: -300px;
+            }
 
             @include media-breakpoint-down(lg) {
                 display: none;

@@ -1,23 +1,38 @@
 .products {
     &__wrap {
-        padding-top: rem(132px);
+        padding-top: rem(150px);
         padding-bottom: rem(80px);
 
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-down(md) {
             padding: rem(80px 0);
         }
     }
 
+    &__backtext {
+        @extend %backtext;
+
+        top: -60px;
+    }
+
     &__heading {
-        text-align: center;
-        margin-bottom: rem(140px);
+        position: relative;
 
-        @include media-breakpoint-down(lg) {
-            margin-bottom: rem(32px);
-        }
+        &-content {
+            text-align: center;
+            margin-top: rem(-40px);
+            margin-bottom: rem(120px);
+            font-family: AlistairSignature, sans-serif;
+            font-size: rem(80px);
+            color: $main;
+            line-height: 1;
 
-        &::before {
-            top: -50px;
+            @include media-breakpoint-down(lg) {
+                margin-bottom: rem(80px)
+            }
+
+            @include media-breakpoint-down(sm) {
+                font-size: rem(64px);
+            }
         }
     }
 
@@ -43,7 +58,12 @@
         padding-top: rem(100px);
         padding-bottom: rem(120px);
 
+
         @include media-breakpoint-down(lg) {
+            padding: rem(64px 0);
+        }
+
+        @include media-breakpoint-down(md) {
             padding: rem(32px 0);
         }
     }
@@ -55,15 +75,12 @@
         gap: rem(64px);
         margin-bottom: rem(80px);
 
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-down(md) {
             grid-template-columns: 1fr;
             gap: rem(32px);
             text-align: center;
             margin: auto;
             margin-bottom: rem(32px);
-        }
-
-        @include media-breakpoint-down(md) {
             max-width: 300px;
         }
     }
@@ -78,6 +95,12 @@
 
         @include media-breakpoint-down(lg) {
             margin: auto;
+        }
+
+        @include media-breakpoint-down(sm) {
+            display: flex;
+            align-items: center;
+            gap: rem(12px);
         }
 
         &:hover {
@@ -99,6 +122,10 @@
 
             @include media-breakpoint-down(lg) {
                 margin-top: rem(12px);
+            }
+            
+            @include media-breakpoint-down(sm) {
+                margin-top: 0;
             }
 
             &::after {
@@ -244,7 +271,7 @@
         }
 
         &--optional {
-            grid-template-columns: 1fr 1fr 2fr;
+            grid-template-columns: 1fr 0.85fr 2fr;
 
             @include media-breakpoint-down(lg) {
                 grid-template-columns: 2fr 1fr;
@@ -282,6 +309,7 @@
         font-weight: 600;
         display: flex;
         flex-wrap: wrap;
+        gap: rem(8px);
 
         @include media-breakpoint-down(lg) {
             display: none;
@@ -304,7 +332,6 @@
         width: 24px;
         height: 24px;
         transform: rotate(45deg);
-        margin-left: rem(8px);
 
         @include media-breakpoint-down(xxl) {
             width: 18px;

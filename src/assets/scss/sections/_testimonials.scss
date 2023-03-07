@@ -1,11 +1,10 @@
 .testimonials {
     &__wrap {
-        padding-top: rem(160px);
-        padding-bottom: rem(160px);
+        padding: rem(160px 0);
         position: relative;
         border-bottom: 1px solid #DDD;
 
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-down(md) {
             padding: rem(80px 0);
         }
         
@@ -14,31 +13,52 @@
         }
     }
 
-    &__heading {
-        margin-bottom: rem(160px);
-        text-align: center;
+
+    &__backtext {
+        @extend %backtext;
+
+        top: -50px;
+        right: 0;
+        max-width: 1100px;
+        margin: auto;
 
         @include media-breakpoint-down(lg) {
-            margin-bottom: rem(64px);
-        }
-
-        &::before {
-            width: 70%;
-            margin: auto;
-            top: -60px;
-            right: 0;
+            top: -30px;
         }
     }
+
+    &__heading {
+        position: relative;
+
+        &-content {
+            text-align: center;
+            margin-top: rem(-40px);
+            margin-bottom: rem(150px);
+            font-family: AlistairSignature, sans-serif;
+            font-size: rem(80px);
+            color: $main;
+            line-height: 1;
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: rem(100px);
+            }
+
+            @include media-breakpoint-down(sm) {
+                font-size: rem(64px);
+            }
+        }
+    }
+
 
     &__carousel {
         overflow: visible;
 
-        &-list {
-            @include unlist();
+        @include media-breakpoint-down(xxl) {
+            padding: 0 50px;
         }
 
-        &-controls {
-            @extend %carousel-controls-wrap;
+        &-list {
+            @include unlist();
         }
 
         &-control {
@@ -47,8 +67,53 @@
             background-color: #fff;
             border-radius: 50%;
             box-shadow: 0 6px 30px rgba(0 0 0 / 6%);
-            width: 116px;
-            height: 116px;
+            width: rem(95px);
+            height: rem(95px);
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            opacity: 1;
+            z-index: 50;
+            transition: 350ms;
+
+            @include media-breakpoint-down(lg) {
+                display: none;
+            }
+
+            svg {
+                max-width: 60%;
+                max-height: 60%;
+            }
+
+            svg path {
+                transition: 350ms;
+            }
+
+            &:hover {
+                background-color: $main;
+                transition: 350ms;
+                
+                svg path {
+                    fill: #fff;
+                    transition: 350ms;
+                }
+            }
+
+            &--prev {
+                left: rem(-45px);
+
+                @include media-breakpoint-down(xxl) {
+                    left: 0;
+                }
+            }
+
+            &--next {
+                right: rem(-45px);
+
+                @include media-breakpoint-down(xxl) {
+                    right: 0;
+                }
+            }
         }
     }
 

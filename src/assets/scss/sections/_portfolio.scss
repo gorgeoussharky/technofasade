@@ -1,11 +1,10 @@
 .portfolio {
     &__wrap {
-        padding-top: rem(175px);
-        padding-bottom: rem(150px);
+        padding: rem(160px 0);
         border-bottom: 1px solid #DDD;
         position: relative;
 
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-down(md) {
             padding: rem(80px 0);
         }
 
@@ -14,22 +13,40 @@
         }
     }
 
-    &__heading {
-        margin-bottom: rem(160px);
-        text-align: center;
+    &__backtext {
+        @extend %backtext;
+
+        top: -50px;
+        right: 0;
+        max-width: 1100px;
+        margin: auto;
 
         @include media-breakpoint-down(lg) {
-            margin-bottom: rem(64px);
-        }
-
-        &::before {
-            width: 70%;
-            margin: auto;
-            top: -40px;
-            right: 0;
+            top: -30px;
         }
     }
 
+    &__heading {
+        position: relative;
+
+        &-content {
+            text-align: center;
+            margin-top: rem(-40px);
+            margin-bottom: rem(150px);
+            font-family: AlistairSignature, sans-serif;
+            font-size: rem(80px);
+            color: $main;
+            line-height: 1;
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: rem(100px);
+            }
+
+            @include media-breakpoint-down(sm) {
+                font-size: rem(64px);
+            }
+        }
+    }
 
     &__carousel {
         overflow: visible;

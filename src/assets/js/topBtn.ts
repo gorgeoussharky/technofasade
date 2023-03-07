@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('scroll', () => {
         const bodyHeight = document.body.offsetHeight
 
-        if (window.scrollY > bodyHeight / 2) {
+        if (window.scrollY > bodyHeight / 3) {
             topBtn.classList.add('top-btn__toggle--visible')
             return
         }

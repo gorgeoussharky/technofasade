@@ -1,9 +1,18 @@
 .socials {
     &__list {
         @include unlist();
-        
+
         display: flex;
         align-items: center;
         gap: rem(14px);
+    }
+
+    &__link {
+        @include media-breakpoint-down(sm) {
+            svg {
+                height: 30px;
+                display: block;
+            }
+        }
     }
 }
