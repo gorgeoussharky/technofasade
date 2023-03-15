@@ -1,4 +1,4 @@
-<nav class='{{prefix}}__breadcrumbs breadcrumbs' aria-label='breadcrumb'>
+<nav class='{{class}}__breadcrumbs breadcrumbs' aria-label='breadcrumb'>
     <ol class='breadcrumbs__list'>
         <li class='breadcrumbs__item'>
             <a class='breadcrumbs__link' href='#'>
@@ -6,14 +6,14 @@
             </a>
         </li>
 
-        {{#if page}}
+        {{#unless parent}}
             <li
                 class='breadcrumbs__item breadcrumbs__item--active'
                 aria-current='page'
             >
                 {{page}}
             </li>
-        {{/if}}
+        {{/unless}}
 
         {{#if parent}}
             <li class='breadcrumbs__item'>

@@ -24,6 +24,11 @@ $container-max-widths: (
 @import 'components/input';
 @import 'components/socials';
 @import 'components/messengers';
+@import 'components/nav-menu';
+@import 'components/product-item';
+@import 'components/news-item';
+@import 'components/pagination';
+@import 'components/share';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'sections/hero';
@@ -36,3 +41,6 @@ $container-max-widths: (
 @import 'sections/about';
 @import 'sections/news';
 @import 'sections/contacts';
+@import 'pages/montage';
+@import 'pages/news-page';
+@import 'pages/single-news-page';

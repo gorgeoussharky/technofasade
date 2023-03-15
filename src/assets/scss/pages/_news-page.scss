@@ -1,0 +1,44 @@
+.news-page {
+    &__wrap {
+            padding-bottom: rem(170px);
+            position: relative;
+    
+            @include media-breakpoint-down(md) {
+                padding-bottom: rem(80px);
+            }
+    }
+             
+    &__heading {
+        margin-bottom: rem(42px);
+    }
+
+    &__list {
+        @include unlist();
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2vw 4vw;
+
+        @include media-breakpoint-down(lg) {
+            gap: rem(32px);
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include media-breakpoint-down(sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__load-more {
+        @extend %load-more;
+        
+        margin: auto;
+        margin-top: rem(100px);
+    }
+
+    &__pagination {
+        width: fit-content;
+        margin: auto;
+        margin-top: rem(60px);
+    }
+}

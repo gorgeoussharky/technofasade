@@ -4,5 +4,28 @@
         
         display: flex;
         align-items: center;
+        margin-top: rem(30px);
+        margin-bottom: rem(46px);
+    }
+
+    &__item {
+        font-weight: 500;
+        font-size: rem(14px);
+        display: flex;
+        align-items: center;
+        color: #A5A5A5;
+
+        &:not(:last-of-type)::after {
+            content: '-';
+            margin: rem(0 8px);
+        }
+    }
+
+    &__link {
+        color: inherit;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 }

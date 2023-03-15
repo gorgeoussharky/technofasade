@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('scroll', () => {
         const { scrollY } = window
         const prevScrollY = headerState.scrollPosition
-
+        
         if (scrollY > window.innerHeight / 2) {
             header.classList.remove('header--slide-out')
             header.classList.add('header--fixed')

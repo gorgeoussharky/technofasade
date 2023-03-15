@@ -13,13 +13,26 @@ h1 {
     @include media-breakpoint-down(lg) {
         font-size: rem(32px);
     }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 48px;
+    }
+
+    @media (max-width: 375px) {
+        font-size: rem(32px);
+    }
 }
 
 h2 {
     font-weight: 600;
-    font-size: rem(32px);
+    font-size: rem(40px);
     font-family: Cormorant, serif;
     line-height: rem(30px);
+
+    @include media-breakpoint-down(sm) {
+        font-size: rem(30px);
+    }
+
 }
 
 h3 {

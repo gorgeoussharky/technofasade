@@ -83,10 +83,10 @@
             svg {
                 max-width: 60%;
                 max-height: 60%;
-            }
 
-            svg path {
-                transition: 350ms;
+                path {
+                    transition: 350ms;
+                }
             }
 
             &:hover {
@@ -120,7 +120,6 @@
     &__link {
         @extend %main-link;
 
-        width: 160px;
         margin-top: rem(80px);
 
         @include media-breakpoint-down(md) {

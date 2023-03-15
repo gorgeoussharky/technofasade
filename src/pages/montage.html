@@ -1,0 +1,199 @@
+{{> ./layout/header title='Монтаж' }}
+
+<div class="montage-page">
+    <main class="montage-page__main-content">
+        <div class="container">
+            {{>breadcrumbs class="montage-page__breadcrumbs" page="Монтаж" }}
+            <h1 class="montage-page__heading">Монтаж</h1>
+            <div class="montage-page__wrap">
+                <aside class="montage-page__sidebar">
+                    <div class="montage-page__sidebar-wrap" data-sticky>
+                        <nav class="montage-page__nav-menu nav-menu">
+                            <ul class="nav-menu__list">
+                                <li class="nav-menu__item">
+                                    <a href="" class="nav-menu__link"> Видео </a>
+                                </li>
+                                <li class="nav-menu__item">
+                                    <a href="" class="nav-menu__link"> Преимущества </a>
+                                </li>
+                                <li class="nav-menu__item">
+                                    <a href="" class="nav-menu__link"> Этап 1 </a>
+                                </li>
+                                <li class="nav-menu__item">
+                                    <a href="" class="nav-menu__link"> Этап 2 </a>
+                                </li>
+                                <li class="nav-menu__item">
+                                    <a href="" class="nav-menu__link"> Этап 3 </a>
+                                </li>
+                                <li class="nav-menu__item">
+                                    <a href="" class="nav-menu__link"> Продукция </a>
+                                </li>
+                                <li class="nav-menu__item">
+                                    <a href="" class="nav-menu__link">
+                                        Примеры работ
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </aside>
+                <div class="montage-page__content">
+                    <div class="montage-page__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            Cum sociis natoque penatibus et magnis dis parturient
+                            montes, nascetur ridiculus mus. Donec quam felis,
+                            ultricies nec, pellentesque eu, pretium quis, sem. Nulla
+                            consequat massa quis enim. Donec pede justo, fringilla
+                            vel, aliquet nec, vulputate eget, arcu. In enim justo,
+                            rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam
+                            dictum felis eu pede mollis pretium. Integer tincidunt.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            Cum sociis natoque penatibus et magnis dis parturient
+                            montes, nascetur ridiculus mus. Donec quam felis,
+                            ultricies nec, pellentesque eu, pretium quis, sem. Nulla
+                            consequat massa quis enim. Donec pede justo, fringilla
+                            vel
+                        </p>
+                    </div>
+                    <section class="montage-page__content-block">
+                        <div class="montage-page__content-block-head">
+                            <h2 class="montage-page__subheading">Видео монтажа</h2>
+                        </div>
+                        <div class="montage-page__content-video">
+                            <iframe
+                                width="100"
+                                height="100"
+                                src="https://www.youtube.com/embed/DbOpZMn_Q14"
+                                title="YouTube video player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </section>
+                    <section class="montage-page__content-block">
+                        <div class="montage-page__content-block-head">
+                            <h2 class="montage-page__subheading">Преимущества</h2>
+                        </div>
+                        <div class="montage-page__advantages advantages">
+                            <ul class="advantages__list">
+                                {{#each (slice data.advantages 0 3)}}
+                                <li
+                                    class="advantages__advantage-item advantage-item"
+                                >
+                                    <div class="advantage-item__wrap">
+                                        {{> picture class="advantage-item__img"
+                                        src=this.img }}
+                                        <div class="advantage-item__title">
+                                            {{this.title}}
+                                        </div>
+                                        <div class="advantage-item__desc">
+                                            {{this.desc}}
+                                        </div>
+                                    </div>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="montage-page__content-block">
+                        <div
+                            class="montage-page__content-block-head montage-page__content-block-head--has-index"
+                            data-index="1"
+                        >
+                            <h2 class="montage-page__subheading">Название этапа</h2>
+                        </div>
+                        <div class="montage-page__content-img">
+                            {{>picture src="placeholder/montagebig.jpg"}}
+                        </div>
+                    </section>
+                    <section class="montage-page__content-block">
+                        <div
+                            class="montage-page__content-block-head montage-page__content-block-head--has-index"
+                            data-index="2"
+                        >
+                            <h2 class="montage-page__subheading">Название этапа</h2>
+                        </div>
+                        <div class="montage-page__content-img">
+                            {{>picture src="placeholder/montage.jpg"}} {{>picture
+                            src="placeholder/montage.jpg"}}
+                        </div>
+                    </section>
+                    <section class="montage-page__content-block">
+                        <div
+                            class="montage-page__content-block-head montage-page__content-block-head--has-index"
+                            data-index="3"
+                        >
+                            <h2 class="montage-page__subheading">Название этапа</h2>
+                        </div>
+                        <div class="montage-page__content-img">
+                            {{>picture src="placeholder/montagebig.jpg"}}
+                        </div>
+                    </section>
+                    <section class="montage-page__content-block">
+                        <div class="montage-page__content-block-head">
+                            <h2 class="montage-page__subheading">Продукция</h2>
+                        </div>
+                        <div class="montage-page__products products">
+                            <ul class="products__list">
+                                {{#each data.products }}
+                                <li
+                                    class="products__product-item product-item product-item--simple"
+                                >
+                                    <div class="product-item__wrap">
+                                        <div class="product-item__head">
+                                            <a href="" class="product-item__title">
+                                                {{this.type}}
+                                                <span>{{this.title}}</span>
+                                            </a>
+                                            <div class="product-item__desc">
+                                                Lorem ipsum dolor sit amet,
+                                                consectetuer adipiscing elit. Aenean
+                                                commodo ligula eget dolor. Aenean
+                                                massa. Сonsectetuer adipiscing elit.
+                                                Aenean commodo ligula eget dolor.
+                                                Aenean massa. Сommodo ligula eget
+                                                dolor.
+                                            </div>
+                                        </div>
+                                        <div class="product-item__img">
+                                            {{#each (slice this.imgs 0 1) }}
+                                            {{>picture src=this}} {{/each}}
+                                        </div>
+                                        <a href="" class="product-item__link" data-animate-link>
+                                            Подробнее о продукции
+                                        </a>
+                                    </div>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="montage-page__content-block">
+                        <div class="montage-page__content-block-head">
+                            <h2 class="montage-page__subheading">Примеры работ</h2>
+                        </div>
+                        <div class="montage-page__gallery gallery">
+                            <ul class="gallery__list">
+                                {{#each (slice data.portfolio 0 4) }}
+                                <li class="gallery__item">
+                                    <a href="" class="gallery__item-link" data-gallery>
+                                        {{>picture class="gallery__item-img" src=this}}
+                                    </a>
+                                </li>
+                                {{/each}}
+                            </ul>
+                            <a href="" class="gallery__link" data-animate-link>Все работы</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+{{> ./layout/footer }}

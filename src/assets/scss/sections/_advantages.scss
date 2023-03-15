@@ -75,6 +75,8 @@
 
         @include media-breakpoint-down(xl) {
             grid-template-columns: 1fr 1fr;
+            width: calc(100% - 30px);
+            margin: auto;
             gap: rem(80px);
         }
 
@@ -95,11 +97,6 @@
             left: -20px;
             top: -10px;
             font-weight: 300;
-
-            @include media-breakpoint-down(lg) {
-                top: -40px;
-                left: 0;
-            }
         }
     }
 }
@@ -125,6 +122,7 @@
     &__title {
         @extend h2;
 
+        font-size: rem(32px);
         margin-bottom: rem(20px);
     }
 }

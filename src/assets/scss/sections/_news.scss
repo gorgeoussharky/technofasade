@@ -64,7 +64,6 @@
     &__link {
         @extend %main-link;
 
-        width: 180px;
         margin-top: rem(80px);
 
         @include media-breakpoint-down(lg) {
@@ -74,37 +73,4 @@
     }
 }
 
-.news-item {
-    &__img {
-        display: block;
-        width: 100%;
-        height: 320px;
-        margin-bottom: rem(24px);
 
-        @include media-breakpoint-down(md) {
-            height: 200px;
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    &__title {
-        @extend h3;
-
-        margin-bottom: rem(20px);
-        height: 90px;
-
-        @include media-breakpoint-down(lg) {
-            height: auto;
-        }
-    }
-
-    &__date {
-        font-weight: 500;
-        color: #b8b8b8;
-    }
-}

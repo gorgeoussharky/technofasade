@@ -1,0 +1,41 @@
+.news-item {
+    &__img {
+        display: block;
+        width: 100%;
+        height: 320px;
+        margin-bottom: rem(24px);
+
+        @include media-breakpoint-down(md) {
+            height: 200px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        display: block;
+    }
+
+    &__title {
+        @extend h3;
+
+        margin-bottom: rem(20px);
+        height: 90px;
+        text-decoration: none;
+        display: block;
+
+        @include media-breakpoint-down(lg) {
+            height: auto;
+        }
+    }
+
+    &__date {
+        font-weight: 500;
+        color: #b8b8b8;
+    }
+}

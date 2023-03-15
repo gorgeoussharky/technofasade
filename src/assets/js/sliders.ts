@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const variationsCarousels = document.querySelectorAll('.variations__carousel')
     const portfolioCarousels = document.querySelectorAll('.portfolio__carousel')
     const testimonialsCarousels = document.querySelectorAll('.testimonials__carousel')
+    const basicCarousels = document.querySelectorAll('[data-carousel]')
 
     heroCarousels.forEach((carousel) => {
         const control = carousel.querySelector('.hero-carousel__control') as HTMLButtonElement | undefined
@@ -140,6 +141,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     spaceBetween: 40,
                 }
             }
+        })
+    })
+
+    basicCarousels.forEach((carousel) => {
+        const sliderEl =  carousel.querySelector('.swiper') as HTMLElement | undefined
+        const prevEl = carousel.querySelector('[data-prev]') as HTMLButtonElement | undefined
+        const nextEl =  carousel.querySelector('[data-next]') as HTMLButtonElement | undefined
+
+        if (!sliderEl) return
+
+        const instance = new Swiper(sliderEl, {
+            slidesPerView: 1,
+            modules: [Navigation],
+            navigation: {
+                prevEl,
+                nextEl
+            },
         })
     })
 })

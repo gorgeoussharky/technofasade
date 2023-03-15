@@ -1,0 +1,35 @@
+{{> ./layout/header title='Статьи' }}
+
+<div class="news-page">
+    <main class="news-page__wrap">
+        <div class="container">
+            {{>breadcrumbs class="news-page__breadcrumbs" page="Статьи" }}
+
+            <h1 class="news-page__heading">
+                Статьи
+            </h1>
+
+            <div class="news-page__content">
+                <ul class="news-page__list">
+                    {{#each data.news}}
+                    <li class="news-page__news-item news-item">
+                        <a href="" class="news-page__link">{{>picture class="news-item__img" src=this.img }}</a>
+                        <a href="" class="news-item__title">{{this.title}}</a>
+                        <time datetime="2022-04-04" class="news-item__date"> {{this.date}} </time>
+                    </li>
+                    {{/each}}
+                </ul>
+
+                <button class="news-page__load-more">
+                    Показать еще
+                </button>
+
+                {{>pagination class="news-page__pagination" }}
+            </div>
+
+
+        </div>
+    </main>
+</div>
+
+{{> ./layout/footer }}
