@@ -1,0 +1,79 @@
+<main class="testimonials-page">
+    <div class="container">
+        {{>breadcrumbs class="montage-page__breadcrumbs" page="Отзывы" }}
+        <h1 class="testimonials-page__heading">Отзывы наших клиентов</h1>
+
+        <div class="testimonials-page__content">
+            <div class="testimonials-page__list-wrap">
+                <ul class="testimonials-page__list">
+                    {{#each data.testimonials}}
+                    <li class="testimonials-page__testimonial-item testimonial-item" >
+                        <div class="testimonial-item__wrap">
+                            {{> picture class="testimonial-item__img"
+                            src=this.img }}
+
+                            <div class="testimonial-item__title">
+                                {{this.title}}
+                            </div>
+                            <div class="testimonial-item__job">
+                                Директор производственной компании АльтСтрой
+                            </div>
+
+                            <div class="testimonial-item__text">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                                dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+                                sem.
+                            </div>
+
+                            <div class="testimonial-item__foot">
+                                <time datetime="2022-04-04" class="testimonial-item__date">
+                                    {{this.date}}
+                                </time>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+                <ul class="testimonials-page__list">
+                    {{#each data.testimonials}}
+                    <li class="testimonials-page__testimonial-item testimonial-item" >
+                        <div class="testimonial-item__wrap">
+                            {{> picture class="testimonial-item__img"
+                            src=this.img }}
+
+                            <div class="testimonial-item__title">
+                                {{this.title}}
+                            </div>
+                            <div class="testimonial-item__job">
+                                Директор производственной компании АльтСтрой
+                            </div>
+
+                            <div class="testimonial-item__text">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                                dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+                                sem.
+                            </div>
+
+                            <div class="testimonial-item__foot">
+                                <time datetime="2022-04-04" class="testimonial-item__date">
+                                    {{this.date}}
+                                </time>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <button class="testimonials-page__load-more">
+                Показать еще
+            </button>
+    
+            {{>pagination class="testimonials-page__pagination" }}
+        </div>
+
+
+    </div>
+</main>

@@ -7,6 +7,10 @@
         @include media-breakpoint-down(md) {
             padding: rem(80px 0);
         }
+
+        @include media-breakpoint-down(sm) {
+            padding-top: rem(160px);
+        }
         
         &::after {
             @extend %bordersymbol;
@@ -24,6 +28,10 @@
 
         @include media-breakpoint-down(lg) {
             top: -30px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            top: -20px;
         }
     }
 
@@ -44,7 +52,8 @@
             }
 
             @include media-breakpoint-down(sm) {
-                font-size: rem(64px);
+                font-size: 40px;
+                margin-bottom: 64px;
             }
         }
     }

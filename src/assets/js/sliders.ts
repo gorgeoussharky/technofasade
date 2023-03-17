@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioCarousels = document.querySelectorAll('.portfolio__carousel')
     const testimonialsCarousels = document.querySelectorAll('.testimonials__carousel')
     const basicCarousels = document.querySelectorAll('[data-carousel]')
+    const productCarousels = document.querySelectorAll('.product-carousel__wrap')
 
     heroCarousels.forEach((carousel) => {
         const control = carousel.querySelector('.hero-carousel__control') as HTMLButtonElement | undefined
@@ -152,12 +153,40 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!sliderEl) return
 
         const instance = new Swiper(sliderEl, {
-            slidesPerView: 1,
+            slidesPerView: 'auto',
+            spaceBetween: 20,
             modules: [Navigation],
             navigation: {
                 prevEl,
                 nextEl
             },
+        })
+    })
+
+    productCarousels.forEach((carousel) => {
+        const control = carousel.querySelector('.product-carousel__control') as HTMLButtonElement | undefined
+        const counter = carousel.querySelector('.product-carousel__counter') as HTMLElement | undefined
+
+        const instance = new Swiper(carousel as HTMLElement, {
+            slidesPerView: 1,
+            loop: true,
+            speed,
+            on: {
+                init({ slides }) {
+                    if (!counter) return
+
+                    updateCounter(slides, counter)
+                },
+                slideChange({ slides, realIndex }) {
+                    if (!counter) return
+
+                    updateCounter(slides, counter, realIndex)
+                }
+            }
+        })
+
+        control?.addEventListener('click', () => {
+            controlClickHandler(control, instance)
         })
     })
 })

@@ -477,5 +477,21 @@
                 }
             ]
         }
+    ],
+    "certificates": [
+        "placeholder/cert1.jpg",
+        "placeholder/cert2.jpg",
+        "placeholder/cert1.jpg",
+        "placeholder/cert2.jpg",
+        "placeholder/cert1.jpg",
+        "placeholder/cert2.jpg",
+        "placeholder/cert1.jpg",
+        "placeholder/cert2.jpg",
+        "placeholder/cert1.jpg",
+        "placeholder/cert2.jpg",
+        "placeholder/cert1.jpg",
+        "placeholder/cert2.jpg",
+        "placeholder/cert1.jpg",
+        "placeholder/cert2.jpg"
     ]
 }

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkEl = link as HTMLElement
 
         setTimeout(() => {
-            const width = linkEl.offsetWidth
+            const width = linkEl.offsetWidth + 10
 
             linkEl.style.width = `${width}px`
 

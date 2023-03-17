@@ -22,11 +22,21 @@
         white-space: nowrap;
         left: -10%;
 
+        @include media-breakpoint-down(xxl) {
+            font-size: rem(120px);
+            right: 0;
+            left: 0;
+            text-align: center;
+            top: -50px;
+        }
+
         @include media-breakpoint-down(lg) {
             font-size: rem(80px);
-            left: 0;
-            right: 0;
-            text-align: center;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 38px;
+            top: -20px;
         }
     }
 
@@ -42,6 +52,10 @@
 
             @include media-breakpoint-down(lg) {
                 max-width: 570px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                font-size: rem(32px);
             }
         }
     }
@@ -61,7 +75,8 @@
         }
 
         @include media-breakpoint-down(sm) {
-            font-size: rem(64px);
+            font-size: 40px;
+            margin-bottom: 64px;
         }
     }
 
@@ -83,6 +98,10 @@
         @include media-breakpoint-down(md) {
             grid-template-columns: 1fr;
             gap: rem(100px);
+        }
+
+        @include media-breakpoint-down(sm) {
+            max-width: 300px;
         }
     }
 
@@ -110,6 +129,10 @@
 
         @include media-breakpoint-down(lg) {
             height: 250px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            height: 375px;
         }
 
         img {

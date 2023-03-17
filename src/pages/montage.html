@@ -7,9 +7,9 @@
             <h1 class="montage-page__heading">Монтаж</h1>
             <div class="montage-page__wrap">
                 <aside class="montage-page__sidebar">
-                    <div class="montage-page__sidebar-wrap" data-sticky>
-                        <nav class="montage-page__nav-menu nav-menu">
-                            <ul class="nav-menu__list">
+                    <div class="montage-page__sidebar-wrap">
+                        <nav class="montage-page__nav-menu nav-menu" >
+                            <ul class="nav-menu__list" data-navbar>
                                 <li class="nav-menu__item">
                                     <a href="" class="nav-menu__link"> Видео </a>
                                 </li>
@@ -37,7 +37,7 @@
                         </nav>
                     </div>
                 </aside>
-                <div class="montage-page__content">
+                <div class="montage-page__content" data-content>
                     <div class="montage-page__text">
                         <p>
                             Lorem ipsum dolor sit amet, consectetuer adipiscing
@@ -122,6 +122,28 @@
                             {{>picture src="placeholder/montage.jpg"}} {{>picture
                             src="placeholder/montage.jpg"}}
                         </div>
+                        <div class="montage-page__text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                elit. Aenean commodo ligula eget dolor. Aenean massa.
+                                Cum sociis natoque penatibus et magnis dis parturient
+                                montes, nascetur ridiculus mus. Donec quam felis,
+                                ultricies nec, pellentesque eu, pretium quis, sem. Nulla
+                                consequat massa quis enim. Donec pede justo, fringilla
+                                vel, aliquet nec, vulputate eget, arcu. In enim justo,
+                                rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam
+                                dictum felis eu pede mollis pretium. Integer tincidunt.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                elit. Aenean commodo ligula eget dolor. Aenean massa.
+                                Cum sociis natoque penatibus et magnis dis parturient
+                                montes, nascetur ridiculus mus. Donec quam felis,
+                                ultricies nec, pellentesque eu, pretium quis, sem. Nulla
+                                consequat massa quis enim. Donec pede justo, fringilla
+                                vel
+                            </p>
+                        </div>
                     </section>
                     <section class="montage-page__content-block">
                         <div
@@ -132,6 +154,28 @@
                         </div>
                         <div class="montage-page__content-img">
                             {{>picture src="placeholder/montagebig.jpg"}}
+                        </div>
+                        <div class="montage-page__text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                elit. Aenean commodo ligula eget dolor. Aenean massa.
+                                Cum sociis natoque penatibus et magnis dis parturient
+                                montes, nascetur ridiculus mus. Donec quam felis,
+                                ultricies nec, pellentesque eu, pretium quis, sem. Nulla
+                                consequat massa quis enim. Donec pede justo, fringilla
+                                vel, aliquet nec, vulputate eget, arcu. In enim justo,
+                                rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam
+                                dictum felis eu pede mollis pretium. Integer tincidunt.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                elit. Aenean commodo ligula eget dolor. Aenean massa.
+                                Cum sociis natoque penatibus et magnis dis parturient
+                                montes, nascetur ridiculus mus. Donec quam felis,
+                                ultricies nec, pellentesque eu, pretium quis, sem. Nulla
+                                consequat massa quis enim. Donec pede justo, fringilla
+                                vel
+                            </p>
                         </div>
                     </section>
                     <section class="montage-page__content-block">
@@ -194,6 +238,8 @@
             </div>
         </div>
     </main>
+
+    {{> ./sections/contacts data=data class="montage-page__contacts" }}
 </div>
 
 {{> ./layout/footer }}

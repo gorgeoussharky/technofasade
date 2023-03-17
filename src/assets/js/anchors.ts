@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             link.addEventListener('click', (e) => {
                 e.preventDefault()
+
                 window.scrollTo({
-                    top: target.offsetTop - 100,
+                    top: target.offsetTop - 200,
                     behavior: 'smooth'
                 })
             })

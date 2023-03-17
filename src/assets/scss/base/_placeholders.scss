@@ -41,6 +41,10 @@
     transition: 350ms;
     width: fit-content;
 
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+
     &:hover {
         width: 100%;
         transition: 350ms;
@@ -120,11 +124,19 @@
         bottom: 30px;
     }
 
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+
     span {
         font-size: rem(64px);
 
         @include media-breakpoint-down(lg) {
             font-size: rem(64px);
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 36px;
         }
     }
 }
@@ -148,8 +160,8 @@
         top: -40px;
     }
 
-    @include media-breakpoint-down(md) {
-        display: none;
+    @include media-breakpoint-down(sm) {
+        font-size: 38px;
     }
 }
 

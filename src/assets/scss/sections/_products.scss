@@ -6,12 +6,24 @@
         @include media-breakpoint-down(md) {
             padding: rem(80px 0);
         }
+
+        @include media-breakpoint-down(sm) {
+            padding-top: rem(140px);
+        }
     }
 
     &__backtext {
         @extend %backtext;
 
         top: -60px;
+
+        @include media-breakpoint-down(xl) {
+            top: -40px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            top: -30px;
+        }
     }
 
     &__heading {
@@ -27,11 +39,12 @@
             line-height: 1;
 
             @include media-breakpoint-down(lg) {
-                margin-bottom: rem(80px)
+                margin-bottom: rem(80px);
             }
 
             @include media-breakpoint-down(sm) {
-                font-size: rem(64px);
+                font-size: 40px;
+                margin-bottom: 64px;
             }
         }
     }
@@ -51,4 +64,3 @@
         min-width: 1px;
     }
 }
-

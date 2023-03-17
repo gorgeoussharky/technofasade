@@ -1,0 +1,234 @@
+.product-page {
+    &__head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: rem(24px);
+        margin-bottom: rem(150px);
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 100px;
+            gap: 46px;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__wrap {
+        padding-bottom: rem(170px);
+
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 84px;
+        }
+    }
+
+    &__heading {
+        @include media-breakpoint-down(sm) {
+            font-size: rem(48px);
+        }
+    }
+
+    &__product-info {
+        max-width: 510px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__product-carousel {
+        min-width: 1px;
+    }
+
+    &__link {
+        @extend %main-link;
+
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-top: auto;
+
+        @include media-breakpoint-down(sm) {
+            margin-top: 24px;
+        }
+    }
+
+    &__advantages {
+        margin-bottom: rem(170px);
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 44px;
+        }
+
+        .advantages__wrap {
+            border-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+
+            &::after{ 
+                content: none;
+            }
+        }
+
+        .advantages__backtext {
+            font-size: rem(100px);
+            left: 0;
+            right: 0;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 38px;
+            }
+        }
+    }
+}
+
+.product-carousel {
+    &__wrap {
+        position: relative;
+
+        @include media-breakpoint-down(sm) {
+            margin: 0 -12px;
+        }
+    }
+
+    &__list {
+        @include unlist();
+    }
+
+    &__item {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(32 30 30 / 30%);
+        }
+
+        img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+
+            @include media-breakpoint-down(xxl) {
+                height: 300px;
+            }
+        }
+    }
+
+    &__controls {
+        @extend %carousel-controls-wrap;
+    }
+
+    &__control {
+        @extend %carousel-control;
+    }
+
+    &__counter {
+        @extend %carousel-counter;
+
+        bottom: 20px;
+        left: 20px;
+
+        @include media-breakpoint-down(sm) {
+            left: 10px;
+            bottom: 10px
+        }
+    }
+}
+
+.dealers {
+    &__heading {
+        @extend h2;
+
+        margin-bottom: rem(80px);
+        text-align: center;
+        font-size: rem(48px);
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: rem(32px);
+            font-size: rem(36px)
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 36px;
+            line-height: 110%;
+        }
+    }
+
+    &__list {
+        @include unlist();
+        
+        gap: rem(70px);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr 1fr;
+            gap: rem(24px);
+        }
+
+        @include media-breakpoint-down(sm) {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 145px auto;
+        gap: rem(16px);
+        align-items: center;
+
+        @include media-breakpoint-down(sm) {
+            gap: 0;
+        }
+
+        &-img {
+            width: 145px;
+            height: 145px;
+        }
+
+        &-title {
+            font-size: rem(24px);
+            margin-bottom: rem(10px);
+            font-weight: 500;
+
+            @include media-breakpoint-down(sm) {
+                font-size: rem(20px);
+            }
+        }
+
+        &-address {
+            color: $main;
+            font-weight: 500;
+            display: block;
+
+            @include media-breakpoint-down(sm) {
+                font-size: rem(14px);
+            }
+        }
+
+        &-tel {
+            font-weight: 500;
+            text-decoration: none;
+
+            @include media-breakpoint-down(sm) {
+                font-size: rem(14px);
+            }
+        }
+    }
+
+    &__load-more {
+        @extend %main-link;
+        
+        font-size: rem(22px);
+        margin-top: rem(36px);
+
+        @include media-breakpoint-down(sm) {
+            font-size: rem(16px);
+        }
+
+        &::after {
+            transform: rotate(90deg);
+        }
+    }
+}
