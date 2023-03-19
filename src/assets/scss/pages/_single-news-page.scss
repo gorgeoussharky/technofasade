@@ -19,6 +19,12 @@
         @include media-breakpoint-down(xxl) {
             top: rem(120px);
         }
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: rem(24px);
+            display: flex;
+            justify-content: space-between
+        }
     }
 
     &__wrap {
@@ -46,6 +52,12 @@
         border-bottom: 1px solid #ddd;
         display: block;
 
+        @include media-breakpoint-down(lg) {
+            border-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
         span {
             font-weight: 400;
             color: #999;
@@ -55,6 +67,10 @@
 
     &__share {
         margin-bottom: rem(20px);
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 0;
+        }
     }
 
     &__products-banner {

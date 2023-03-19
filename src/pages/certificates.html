@@ -1,0 +1,59 @@
+{{> ./layout/header title='Сертификаты и документация' }}
+
+<main class="certificates-page">
+    <div class="certificates-page__wrap">
+        <div class="container">
+            {{>breadcrumbs class="certificates-page__breadcrumbs" page="Сертификаты и документация" }}
+            <h1 class="certificates-page__heading">Сертификаты и документация</h1>
+
+            <div class="certificates-page__list-wrap">
+                <ul class="certificates-page__list">
+                    {{#each data.certificates }}
+                    <li class="certificates-page__certificate-item certificate-item">
+                        <a {{#img this.img}} href="{{base}}" {{/img}}  class="certificate-item__link" data-gallery="certificates">
+                            <figure class="certificate-item__img-wrap">
+                                {{>picture class="certificate-item__img" src=this.img }}
+
+                                <figcaption class="certificate-item__caption" data-caption>{{ this.title }}</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    {{/each}}
+
+                    {{#each data.certificates }}
+                    <li class="certificates-page__certificate-item certificate-item">
+                        
+                        <a {{#img this.img}} href="{{base}}" {{/img}} class="certificate-item__link" data-gallery="certificates">
+                            <figure class="certificate-item__img-wrap">
+                                {{>picture class="certificate-item__img" src=this.img }}
+
+                                <figcaption class="certificate-item__caption" data-caption>{{ this.title }}</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    {{/each}}
+
+                    {{#each data.certificates }}
+                    <li class="certificates-page__certificate-item certificate-item">
+                        <a {{#img this.img}} href="{{base}}" {{/img}} class="certificate-item__link" data-gallery="certificates">
+                            <figure class="certificate-item__img-wrap">
+                                {{>picture class="certificate-item__img" src=this.img }}
+
+                                <figcaption class="certificate-item__caption" data-caption>{{ this.title }}</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+
+                <button class="certificates-page__load-more">
+                    Показать еще
+                </button>
+        
+                {{>pagination class="certificates-page__pagination" }}
+            </div>
+        </div>
+    </div>
+</main>
+
+{{> ./layout/footer }}

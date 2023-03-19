@@ -315,41 +315,76 @@
         {
             "img": "placeholder/user1.jpg",
             "title": "Анна Гладких",
+            "text": true,
             "date": "18.09.22"
         },
         {
             "img": "placeholder/user2.jpg",
             "title": "Алексей Иванов",
+            "video": true,
             "date": "22.09.22"
         },
         {
             "img": "placeholder/user3.jpg",
             "title": "Диана Горшкова",
+            "job": "Генеральный директор СибСтройПласт",
+            "text": true,
             "date": "30.09.22"
         },
         {
             "img": "placeholder/user1.jpg",
             "title": "Анна Гладких",
+            "video": true,
             "date": "31.09.22"
         },
         {
             "img": "placeholder/user1.jpg",
             "title": "Анна Гладких",
+            "contentImg": true,
             "date": "18.09.22"
         },
         {
             "img": "placeholder/user2.jpg",
             "title": "Алексей Иванов",
+            "job": "Генеральный директор СибСтройПласт",
+            "text": true,
             "date": "22.09.22"
         },
         {
             "img": "placeholder/user3.jpg",
             "title": "Диана Горшкова",
+            "contentImg": true,
             "date": "30.09.22"
         },
         {
             "img": "placeholder/user1.jpg",
             "title": "Анна Гладких",
+            "contentImg": true,
+            "date": "31.09.22"
+        },
+        {
+            "img": "placeholder/user1.jpg",
+            "title": "Анна Гладких",
+            "text": true,
+            "date": "18.09.22"
+        },
+        {
+            "img": "placeholder/user2.jpg",
+            "title": "Алексей Иванов",
+            "video": true,
+            "date": "22.09.22"
+        },
+        {
+            "img": "placeholder/user3.jpg",
+            "title": "Диана Горшкова",
+            "job": "Генеральный директор СибСтройПласт",
+            "contentImg": true,
+            "date": "30.09.22"
+        },
+        {
+            "img": "placeholder/user1.jpg",
+            "title": "Анна Гладких",
+            "video": true,
             "date": "31.09.22"
         }
     ],
@@ -479,19 +514,41 @@
         }
     ],
     "certificates": [
-        "placeholder/cert1.jpg",
-        "placeholder/cert2.jpg",
-        "placeholder/cert1.jpg",
-        "placeholder/cert2.jpg",
-        "placeholder/cert1.jpg",
-        "placeholder/cert2.jpg",
-        "placeholder/cert1.jpg",
-        "placeholder/cert2.jpg",
-        "placeholder/cert1.jpg",
-        "placeholder/cert2.jpg",
-        "placeholder/cert1.jpg",
-        "placeholder/cert2.jpg",
-        "placeholder/cert1.jpg",
-        "placeholder/cert2.jpg"
+        {
+            "title": "Название документа в 1 или максимум в 2 строки",
+            "img": "placeholder/cert1.jpg"
+        },
+        {
+            "title": "Название документа",
+            "img": "placeholder/cert2.jpg"
+        },
+        {
+            "title": "Название документа в 1 или максимум в 2 строки",
+            "img": "placeholder/cert3.jpg"
+        },
+        {
+            "title": "Название документа",
+            "img": "placeholder/cert4.jpg"
+        },
+        {
+            "title": "Название документа в 1 или максимум в 2 строки",
+            "img": "placeholder/cert5.jpg"
+        },
+        {
+            "title": "Название документа",
+            "img": "placeholder/cert6.jpg"
+        },
+        {
+            "title": "Название документа в 1 или максимум в 2 строки",
+            "img": "placeholder/cert7.jpg"
+        },
+        {
+            "title": "Название документа",
+            "img": "placeholder/cert8.jpg"
+        },
+        {
+            "title": "Название документа в 1 или максимум в 2 строки",
+            "img": "placeholder/cert9.jpg"
+        }
     ]
 }

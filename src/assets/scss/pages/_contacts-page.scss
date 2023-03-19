@@ -1,0 +1,66 @@
+.contacts-page {
+    &__heading {
+        margin-bottom: rem(42px);
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 340px auto;
+        gap: rem(80px);
+
+        @include media-breakpoint-down(xxl) {
+            gap: rem(40px);
+        }
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__map {
+        height: 500px;
+    }
+
+    &__contacts {
+        .contacts__wrap {
+            padding-top: rem(100px);
+        }
+    }
+}
+
+.contacts-list {
+    &__list {
+        @include unlist();
+
+        display: grid;
+        gap: rem(30px);
+    }
+
+    &__item {
+        &-title {
+            font-size: rem(14px);
+            color: #b3b3b3;
+            margin-bottom: rem(12px);
+            line-height: 1;
+        }
+
+        &-value {
+            font-size: rem(18px);
+        }
+
+        &-email {
+            font-size: rem(24px);
+            color: $main;
+
+            &:hover {
+                color: $main;
+            }
+        }
+
+        &-tel {
+            font-size: rem(36px);
+            color: #000;
+            text-decoration: none;
+        }
+    }
+}

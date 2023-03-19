@@ -301,6 +301,10 @@
         &--optional {
             grid-template-columns: 1fr 0.85fr 2fr;
 
+            @include media-breakpoint-down(xxl) {
+                grid-template-columns: 1fr 0.9fr 2fr;
+            }
+
             @include media-breakpoint-down(lg) {
                 grid-template-columns: 2fr 1fr;
             }

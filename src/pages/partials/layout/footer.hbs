@@ -1,3 +1,47 @@
+<dialog class="modal" id="gallery">
+    <div class="modal__content">
+
+        <button class="modal__close">
+            <svg width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M63.6328 21.2031L21.2064 63.6295" stroke="white" stroke-width="4" stroke-linecap="round" />
+                <path d="M21.2266 21.2031L63.653 63.6295" stroke="white" stroke-width="4" stroke-linecap="round" />
+            </svg>
+        </button>
+
+
+        <div class="modal__modal-gallery modal-gallery">
+            <div class="modal-gallery__wrap">
+                <button class="modal-gallery__control modal-gallery__control--prev">
+                    <svg width="48" height="68" viewBox="0 0 48 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 34.4978L48 67.9978L26.5 34.4978L48 0.997772L15 34.4978Z" fill="white"/>
+<path d="M0 34.4978L25 58.9978L9.5 34.4978L25 9.99777L0 34.4978Z" fill="white"/>
+</svg>
+
+                </button>
+
+                <div class="modal-gallery__content">
+                    <figure class="modal-gallery__img-wrap">
+                        <img src="" alt="" class="modal-gallery__img" data-img>
+
+                        <figcaption class="modal-gallery__img-caption" data-caption></figcaption>
+                    </figure>
+                </div>
+
+                 <button class="modal-gallery__control modal-gallery__control--next">
+ <svg width="48" height="68" viewBox="0 0 48 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M33 34.4978L0 67.9978L21.5 34.4978L0 0.997772L33 34.4978Z" fill="white"/>
+<path d="M48 34.4978L23 58.9978L38.5 34.4978L23 9.99777L48 34.4978Z" fill="white"/>
+</svg>
+
+
+                </button>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+
+
 <div class="top-btn">
     <button class="top-btn__toggle">
         <svg width="38" height="29" viewBox="0 0 38 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,11 +110,11 @@
                         <div class="footer__footer-menu footer-menu">
                             <ul class="footer-menu__list">
                                 {{#each data.footer_menu }}
-                                <li class="footer-menu__item">
-                                    <a href="" class="footer-menu__link">
-                                        {{this.label}}
-                                    </a>
-                                </li>
+                                    <li class="footer-menu__item">
+                                        <a href="" class="footer-menu__link">
+                                            {{this.label}}
+                                        </a>
+                                    </li>
                                 {{/each}}
                             </ul>
                         </div>
@@ -80,21 +124,21 @@
                         <div class="footer__footer-menu footer-menu">
                             <ul class="footer-menu__list">
                                 {{#each data.footer_menu2 }}
-                                <li class="footer-menu__item">
-                                    <a href="" class="footer-menu__link">
-                                        {{this.label}}
-                                    </a>
+                                    <li class="footer-menu__item">
+                                        <a href="" class="footer-menu__link">
+                                            {{this.label}}
+                                        </a>
 
-                                    <ul class="footer-menu__sublist">
-                                        {{#each this.submenu }}
-                                        <li class="footer-menu__subitem">
-                                            <a href="" class="footer-menu__sublink">
-                                                {{this.label}}
-                                            </a>
-                                        </li>
-                                        {{/each}}
-                                    </ul>
-                                </li>
+                                        <ul class="footer-menu__sublist">
+                                            {{#each this.submenu }}
+                                                <li class="footer-menu__subitem">
+                                                    <a href="" class="footer-menu__sublink">
+                                                        {{this.label}}
+                                                    </a>
+                                                </li>
+                                            {{/each}}
+                                        </ul>
+                                    </li>
                                 {{/each}}
                             </ul>
 

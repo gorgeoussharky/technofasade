@@ -1,0 +1,96 @@
+.certificates-page {
+    &__wrap {
+        padding-bottom: rem(170px);
+
+        @include media-breakpoint-down(md) {
+            padding-bottom: rem(80px);
+        }
+    }
+
+    &__heading {
+        margin-bottom: rem(100px);
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: rem(42px);
+        }
+    }
+
+    &__list {
+        @include unlist();
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: rem(85px);
+
+        @include media-breakpoint-down(xl) {
+            gap: rem(32px);
+        }
+
+        @include media-breakpoint-down(sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__load-more {
+        @extend %load-more;
+
+        margin: auto;
+        margin-top: rem(100px);
+    }
+
+    &__pagination {
+        width: fit-content;
+        margin: auto;
+        margin-top: rem(60px);
+    }
+}
+
+.certificate-item {
+    &__img {
+        position: relative;
+        display: block;
+
+        img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgba(#000, 0.3);
+            background-image: url("data:image/svg+xml,%3Csvg width='74' height='74' viewBox='0 0 74 74' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M73.0225 68.3098L56.2727 51.56C60.6794 46.1168 63.3327 39.2001 63.3327 31.6669C63.3327 14.2071 49.1261 0.000518799 31.6663 0.000518799C14.2064 0.000518799 0 14.2069 0 31.6668C0 49.1266 14.2066 63.3332 31.6664 63.3332C39.1996 63.3332 46.1163 60.6799 51.5595 56.2733L68.3093 73.023C68.9593 73.673 69.8125 73.9997 70.666 73.9997C71.5194 73.9997 72.3727 73.673 73.0227 73.023C74.3259 71.7198 74.3259 69.6131 73.0225 68.3098ZM31.6664 56.6665C17.8798 56.6665 6.66665 45.4534 6.66665 31.6668C6.66665 17.8802 17.8798 6.66702 31.6664 6.66702C45.453 6.66702 56.6662 17.8802 56.6662 31.6668C56.6662 45.4534 45.4528 56.6665 31.6664 56.6665Z' fill='white'/%3E%3Cpath d='M32 21V42' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M21.5 31.5L42.5 31.5' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+            background-size: 75px 75px;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: 350ms;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+
+        &:hover {
+            .certificate-item__img {
+                &::before {
+                    opacity: 1;
+                    transition: 350ms;
+                }
+            }
+        }
+    }
+
+    &__caption {
+        margin-top: rem(24px);
+        font-weight: 600;
+        font-size: rem(28px);
+        display: block;
+        font-family: Cormorant, sans-serif;
+    }
+}

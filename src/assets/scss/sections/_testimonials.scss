@@ -2,7 +2,7 @@
     &__wrap {
         padding: rem(160px 0);
         position: relative;
-        border-bottom: 1px solid #DDD;
+        border-bottom: 1px solid #ddd;
 
         @include media-breakpoint-down(md) {
             padding: rem(80px 0);
@@ -11,12 +11,11 @@
         @include media-breakpoint-down(sm) {
             padding-top: rem(160px);
         }
-        
+
         &::after {
             @extend %bordersymbol;
         }
     }
-
 
     &__backtext {
         @extend %backtext;
@@ -57,7 +56,6 @@
             }
         }
     }
-
 
     &__carousel {
         overflow: visible;
@@ -101,7 +99,7 @@
             &:hover {
                 background-color: $main;
                 transition: 350ms;
-                
+
                 svg path {
                     fill: #fff;
                     transition: 350ms;
@@ -150,7 +148,7 @@
         }
     }
 
-    &__img {
+    &__user-img {
         width: rem(120px);
         height: rem(120px);
         display: block;
@@ -177,8 +175,43 @@
         margin-bottom: rem(8px);
     }
 
-    &__text {
-        margin-bottom: rem(22px);   
+    &__job {
+        font-weight: 500;
+        font-size: rem(14px);
+        color: #b8b8b8;
+    }
+
+    &__body {
+        margin-bottom: rem(22px);
+        margin-top: rem(24px);
+    }
+
+    &__video {
+        height: 385px;
+        width: auto;
+        margin: rem(0 -46px);
+
+        @include media-breakpoint-down(lg) {
+            margin: rem(0 -24px);
+        }
+
+        iframe,
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__img {
+        height: 360px;
+        width: fit-content;
+        margin: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
     }
 
     &__foot {
@@ -187,7 +220,7 @@
     }
 
     &__date {
-        color: #B8B8B8;
+        color: #b8b8b8;
         font-weight: 500;
     }
 

@@ -1,0 +1,37 @@
+{{> ./layout/header title='Примеры работ' }}
+
+<main class="portfolio-page">
+    <div class="portfolio-page__wrap">
+        <div class="container">
+            {{>breadcrumbs class="portfolio-page__breadcrumbs" page="Примеры работ" }}
+            <h1 class="portfolio-page__heading">Примеры работ</h1>
+
+            <div class="portfolio-page__gallery gallery">
+                <ul class="gallery__list">
+                    {{#each data.portfolio }}
+                    <li class="gallery__item">
+                        <a  {{#img this}} href="{{base}}" {{/img}} class="gallery__item-link"  data-gallery="portfolio">
+                            {{>picture class="gallery__item-img" src=this}}
+                        </a>
+                    </li>
+                    {{/each}}
+                    {{#each data.portfolio }}
+                    <li class="gallery__item">
+                        <a {{#img this}} href="{{base}}" {{/img}} class="gallery__item-link" data-gallery="portfolio">
+                            {{>picture class="gallery__item-img" src=this}}
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+
+                <button class="portfolio-page__load-more">
+                    Показать еще
+                </button>
+        
+                {{>pagination class="portfolio-page__pagination" }}
+            </div>
+        </div>
+    </div>
+</main>
+
+{{> ./layout/footer }}
