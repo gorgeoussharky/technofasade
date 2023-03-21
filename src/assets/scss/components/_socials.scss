@@ -8,8 +8,16 @@
     }
 
     &__link {
+        opacity: 0.6;
+        transition: 350ms;
+        
+        &:hover {
+            opacity: 1;
+            transition: 350ms;
+        }
+
         @include media-breakpoint-down(sm) {
-            svg {
+            img {
                 height: 30px;
                 display: block;
             }

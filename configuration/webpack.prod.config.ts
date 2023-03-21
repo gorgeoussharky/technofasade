@@ -10,7 +10,7 @@ import baseConfig from '../webpack.config'
 const config: Configuration = merge(baseConfig, {
     mode: 'production',
     output: {
-        publicPath: process.env.wp_theme ? `/wp-content/themes/${process.env.wp_theme}/` : undefined,
+        publicPath: process.env.wp_theme ? `/technofasade_wp/wp-content/themes/${process.env.wp_theme}/` : undefined,
     },
     /* Manage source maps generation process. Refer to https://webpack.js.org/configuration/devtool/#production */
     devtool: false,

@@ -1,0 +1,107 @@
+.company-advantages {
+    &__heading {
+        @extend h2;
+
+        position: relative;
+        text-transform: uppercase;
+        margin-bottom: rem(62px);
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: rem(32px);
+        }
+    }
+
+    &__list {
+        @include unlist();
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: rem(80px 120px);
+
+        @include media-breakpoint-down(xxl) {
+            gap: rem(32px);
+        }
+
+        @include media-breakpoint-down(sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        border-left: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        padding: rem(32px);
+        padding-bottom: 0;
+        padding-right: 0;
+        position: relative;
+
+        @include media-breakpoint-down(sm) {
+            border-left: 0;
+            border-top: 0;
+            padding: 0;
+            padding-bottom: rem(24px);
+            border-bottom: 1px solid #ddd;
+        }
+
+        &::after {
+            content: '';
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3.53553' y='12.6797' width='11.5219' height='11.5219' transform='rotate(-45 3.53553 12.6797)' stroke='%23CB9274' stroke-width='5'/%3E%3C/svg%3E%0A");
+            width: 50px;
+            height: 50px;
+            background-size: 18px 18px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: $bodybg;
+            position: absolute;
+            z-index: 10;
+            left: -25px;
+            top: -25px;
+
+            @include media-breakpoint-down(lg) {
+                display: none;
+            }
+        }
+
+        &-title {
+            font-weight: 600;
+            font-size: rem(32px);
+            line-height: 106%;
+            margin-bottom: rem(20px);
+            font-family: Cormorant, sans-serif;
+            max-width: 270px;
+        }
+
+        &-text {
+            line-height: 175%;
+        }
+    }
+
+    &__img {
+        display: flex;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        margin-top: rem(76px);
+        font-weight: 600;
+        font-size: rem(20px);
+        line-height: 140%;
+
+        @include media-breakpoint-down(sm) {
+            text-align: center;
+        }
+
+        svg {
+            display: block;
+            margin-bottom: rem(32px);
+
+            @include media-breakpoint-down(sm) {
+                margin: auto;
+                margin-bottom: rem(24px);
+            }
+        }
+    }
+}

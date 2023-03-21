@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!headerState.menuTransitioning) headerState.menuExpanded = !headerState.menuExpanded
     })
 
-    headerMenu?.querySelectorAll('.header-menu__link').forEach((link) => {
+    headerMenu?.querySelectorAll('.header-menu__link').forEach((link, index) => {
         const linkEl = link as HTMLAnchorElement
         const { hash } = linkEl
 
@@ -96,6 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 headerState.menuExpanded = false
             })
         }
+
+        linkEl.insertAdjacentHTML('afterbegin', `<span>0${index+1}</span>`)
     })
 })
 

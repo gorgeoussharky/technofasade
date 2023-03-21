@@ -1,28 +1,28 @@
 {{> ./layout/header title='Монтаж' }}
 
-<main class="single-news-page">
+<main class="article-page">
     <div class="container">
-        {{>breadcrumbs class="single-news-page__breadcrumbs" parent="Статьи"
+        {{>breadcrumbs class="article-page__breadcrumbs" parent="Статьи"
         page="Заголовок новости в пределах ..." }}
 
-        <div class="single-news-page__wrap">
-            <aside class="single-news-page__sidebar">
-                <div class="single-news-page__sidebar-wrap">
-                    <time datetime="2022-04-04" class="single-news-page__date">
+        <div class="article-page__wrap">
+            <aside class="article-page__sidebar">
+                <div class="article-page__sidebar-wrap">
+                    <time datetime="2022-04-04" class="article-page__date">
                         12 февраля 2023
                         <span>16:45</span>
                     </time>
 
-                    {{>share class="single-news-page__share"}}
+                    {{>share class="article-page__share"}}
 
-                    <a href="" class="single-news-page__products-banner">
+                    <a href="" class="article-page__products-banner">
                         {{>picture src="banner.jpg"}}
                     </a>
                 </div>
             </aside>
-            <div class="single-news-page__content">
-                <article class="single-news-page__article">
-                    <h1 class="single-news-page__heading">
+            <div class="article-page__content">
+                <article class="article-page__article">
+                    <h1 class="article-page__heading">
                         Заголовок новости в пределах 2-х строк. При
                         необходимости можно в 3 строки
                     </h1>
@@ -190,10 +190,10 @@
 
                     <div
                         data-carousel
-                        class="single-news-page__article-carousel"
+                        class="content-block-carousel"
                     >
                         <button
-                            class="single-news-page__article-carousel-control single-news-page__article-carousel-control--prev"
+                            class="content-block-carousel__control content-block-carousel__control--prev"
                             data-prev
                         >
                             <svg
@@ -214,14 +214,14 @@
                             </svg>
                         </button>
                         <div
-                            class="single-news-page__article-carousel-wrap swiper"
+                            class="content-block-carousel__wrap swiper"
                         >
                             <div
-                                class="single-news-page__article-carousel-wrap swiper-wrapper"
+                                class="content-block-carousel__content swiper-wrapper"
                             >
                                 {{#each data.hero_carousel}}
                                 <div
-                                    class="single-news-page__article-carousel-item swiper-slide"
+                                    class="content-block-carousel__item swiper-slide"
                                 >
                                     {{#img this}}
                                     <figure>
@@ -237,7 +237,7 @@
                             </div>
                         </div>
                         <button
-                            class="single-news-page__article-carousel-control single-news-page__article-carousel-control--next"
+                            class="content-block-carousel__control content-block-carousel__control--next"
                             data-next
                         >
                             <svg
@@ -332,6 +332,25 @@
                         allowfullscreen
                     ></iframe>
 
+                    <blockquote class="wp-block-quote">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean
+                            massa. Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus. Donec
+                            quam felis, ultricies nec, pellentesque eu, pretium
+                            quis, sem. Nulla consequat massa quis enim. Donec
+                            pede justo, fringilla vel, aliquet nec, vulputate
+                            eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                            venenatis vitae, justo. Nullam dictum felis eu pede
+                            mollis pretium. Integer tincidunt.
+                        </p>
+                        <cite>
+                            Аклексей Иванов
+                            <strong> Основатель компании Techno Facade </strong>
+                        </cite>
+                    </blockquote>
+
                     <p>
                         Lorem ipsum dolor sit amet, consectetuer adipiscing
                         elit. Aenean commodo ligula eget dolor. Aenean massa.
@@ -391,7 +410,7 @@
                     </p>
                 </article>
 
-                <nav class="single-news-page__articles-nav articles-nav">
+                <nav class="article-page__articles-nav articles-nav">
                     <ul class="articles-nav__list">
                         <li class="articles-nav__item articles-nav__item--prev">
                             <a

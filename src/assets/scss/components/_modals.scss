@@ -17,7 +17,6 @@
 
     &[open] {
         transition: opacity 350ms;
-        display: flex;
     }
 
     &__title {
@@ -55,14 +54,72 @@
         top: -50px;
         z-index: 10;
 
-        @include media-breakpoint-down(sm) {
-            top: 0;
+        @include media-breakpoint-down(lg) {
+            top: -100px;
+        }
 
+        @include media-breakpoint-down(sm) {
             svg {
                 width: 40px;
                 height: 40px;
             }
         }
+    }
+
+    &__body {
+        background: $bodybg;
+        padding: rem(64px);
+        max-width: 780px;
+        width: 100%;
+        margin: auto;
+
+        @include media-breakpoint-down(md) {
+            padding: rem(40px);
+        }
+    }
+
+    &__body-content {
+        border: 1px solid #ebcebf;
+        padding: rem(64px);
+        position: relative;
+
+        @include media-breakpoint-down(md) {
+            padding: rem(24px);
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3.53553' y='12.6797' width='11.5219' height='11.5219' transform='rotate(-45 3.53553 12.6797)' stroke='%23CB9274' stroke-width='5'/%3E%3C/svg%3E%0A");
+            width: 60px;
+            height: 60px;
+            background-size: 25px 25px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: $bodybg;
+            position: absolute;
+        }
+
+        &::before {
+            left: -30px;
+            top: -30px;
+        }
+
+        &::after {
+            right: -30px;
+            bottom: -30px;
+        }
+    }
+
+
+    &__modal-notice {
+        height: 50vh;
+        padding-top: rem(100px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
     }
 }
 
@@ -137,5 +194,106 @@
         width: 100%;
         max-height: 60vh;
         object-fit: contain;
+    }
+}
+
+.modal-form {
+    &__heading {
+        @extend h2;
+        
+        margin-bottom: rem(22px);
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+
+    &__text {
+        max-width: 540px;
+        margin: auto;
+        margin-bottom: rem(50px);
+        text-align: center;
+    }
+
+    &__content {
+        display: grid;
+        gap: rem(24px);
+        max-width: 390px;
+        margin: auto
+    }
+
+    &__link {
+        @extend %main-link;
+
+        justify-content: center;
+        padding-bottom: rem(8px);
+        margin-top: rem(14px);
+        margin-bottom: rem(20px);
+        width: 220px;
+
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+        }
+
+        &::after {
+            height: 22px;
+            width: 22px;
+
+            @include media-breakpoint-down(lg) {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+
+    &__policy {
+        font-size: rem(12px);
+        line-height: 130%;
+        color: #a3a3a3;
+        max-width: 365px;
+        text-align: center;
+
+        a {
+            color: $main;
+        }
+    }
+}
+
+
+.modal-notice {
+    &__backtext {
+        @extend %backtext;
+
+        color:         #F0E5E5;
+        font-size: rem(70px);
+        z-index: 10;
+        top: 80px;
+
+        @media (max-width: 520px) {
+            font-size: rem(42px);
+        }
+    }
+
+    &__heading {
+        text-align: center;
+        margin-bottom: rem(70px);
+        font-family: AlistairSignature, sans-serif;
+        font-size: rem(80px);
+        color: $main;
+        line-height: 1;
+        position: relative;
+        z-index: 20;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: rem(100px);
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 40px;
+            margin-bottom: 64px;
+        }
+    }
+
+    &__text{
+        text-align: center;
     }
 }

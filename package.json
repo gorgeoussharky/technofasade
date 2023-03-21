@@ -76,7 +76,7 @@
     "scripts": {
         "dev": "cross-env NODE_OPTIONS=--loader=ts-node/esm webpack serve --config configuration/webpack.dev.config.ts --mode=development",
         "build": "cross-env NODE_OPTIONS=--loader=ts-node/esm webpack --config configuration/webpack.prod.config.ts",
-        "build:wp": "cross-env wp_theme=none no_hash=true NODE_OPTIONS=--loader=ts-node/esm webpack --config configuration/webpack.prod.config.ts",
+        "build:wp": "cross-env wp_theme=technofasade no_hash=true NODE_OPTIONS=--loader=ts-node/esm webpack --config configuration/webpack.prod.config.ts",
         "build:dev": "webpack --config configuration/webpack.dev.config.js --mode=development",
         "build:dev_wp": "webpack --config configuration/webpack.wp.config.js --mode=development",
         "lint:sass": "sass-lint -v -q",

@@ -1,0 +1,32 @@
+.gallery {
+    &__list {
+        @include unlist();
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__item-img {
+        width: 100%;
+        height: 330px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__link {
+        @extend %main-link;
+
+        margin-top: rem(50px);
+        margin-left: 0;
+        justify-content: flex-start;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}

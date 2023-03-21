@@ -29,6 +29,9 @@ $container-max-widths: (
 @import 'components/news-item';
 @import 'components/pagination';
 @import 'components/share';
+@import 'components/content-block';
+@import 'components/gallery';
+@import 'components/company-advantages';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'sections/hero';
@@ -41,11 +44,10 @@ $container-max-widths: (
 @import 'sections/about';
 @import 'sections/news';
 @import 'sections/contacts';
-@import 'pages/montage';
+@import 'pages/page';
 @import 'pages/news-page';
-@import 'pages/single-news-page';
+@import 'pages/article-page';
 @import 'pages/product-page';
-@import 'pages/about-page';
 @import 'pages/testimonials-page';
 @import 'pages/portfolio-page';
 @import 'pages/certificates-page';

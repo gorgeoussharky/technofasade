@@ -81,11 +81,6 @@ const renderModal = (galleryName: string):ModalDOM => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('[data-gallery]')
-    // const modalImg = galleryModal.querySelector('[data-img]') as HTMLImageElement
-    // const modalCaption = galleryModal.querySelector('[data-caption]') as HTMLElement
-    // const galleryPrev = galleryModal.querySelector('.modal-gallery__control--prev') as HTMLElement
-    // const galleryNext = galleryModal.querySelector('.modal-gallery__control--next') as HTMLElement
-
     const galleries = new Set<string>()
 
     // Iterate through all gallery items and create galleries set
@@ -129,11 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
         currentGalleryItems.forEach((currentGalleryItem, index) => {
-            const itemCaption = currentGalleryItem.querySelector('[data-caption]') as HTMLElement | undefined
+            const itemCaption = (currentGalleryItem as HTMLElement).dataset.caption
             const itemImg = (currentGalleryItem as HTMLLinkElement).href
 
             galleryState.collection.push({
-                caption: itemCaption?.textContent || '',
+                caption: itemCaption || '',
                 img: itemImg
             })
 

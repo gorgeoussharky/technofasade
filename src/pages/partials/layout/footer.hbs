@@ -1,6 +1,5 @@
-<dialog class="modal" id="gallery">
+<dialog class="modal" id="contact-modal">
     <div class="modal__content">
-
         <button class="modal__close">
             <svg width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M63.6328 21.2031L21.2064 63.6295" stroke="white" stroke-width="4" stroke-linecap="round" />
@@ -8,39 +7,65 @@
             </svg>
         </button>
 
-
-        <div class="modal__modal-gallery modal-gallery">
-            <div class="modal-gallery__wrap">
-                <button class="modal-gallery__control modal-gallery__control--prev">
-                    <svg width="48" height="68" viewBox="0 0 48 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 34.4978L48 67.9978L26.5 34.4978L48 0.997772L15 34.4978Z" fill="white"/>
-<path d="M0 34.4978L25 58.9978L9.5 34.4978L25 9.99777L0 34.4978Z" fill="white"/>
-</svg>
-
-                </button>
-
-                <div class="modal-gallery__content">
-                    <figure class="modal-gallery__img-wrap">
-                        <img src="" alt="" class="modal-gallery__img" data-img>
-
-                        <figcaption class="modal-gallery__img-caption" data-caption></figcaption>
-                    </figure>
+        <div class="modal__body">
+            <div class="modal__body-content">
+                <div class="modal__modal-form modal-form">
+                    <div class="modal-form__wrap">
+                        <div class="modal-form__heading">
+                            Заполните форму
+                        </div>
+                        <div class="modal-form__text">
+                            Наш специалист свяжется с вами в ближайшее время, остветит на все интересующие вопросы и поможет
+                            подобрать оптимальное решение под ваши нужды
+                        </div>
+                        <form class="modal-form__content">
+                            {{> ./form/input class="modal-form__input input--icon" type="text" id="name" label="Имя"
+                                placeholder="Имя" icon="user" }}
+                            {{> ./form/input class="modal-form__input input--icon" type="tel" id="tel" label="Телефон"
+                                placeholder='+7 (***) ***-**-**' icon="tel" }}
+                            <button class="modal-form__link">
+                                Оставить заявку
+                            </button>
+                            <div class="modal-form__policy">
+                                Нажимая на кнопку «Оставить заявку» вы даете
+                                свое согласие на обработку <a href="">персональных данных</a>
+                                сайта
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
-                 <button class="modal-gallery__control modal-gallery__control--next">
- <svg width="48" height="68" viewBox="0 0 48 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M33 34.4978L0 67.9978L21.5 34.4978L0 0.997772L33 34.4978Z" fill="white"/>
-<path d="M48 34.4978L23 58.9978L38.5 34.4978L23 9.99777L48 34.4978Z" fill="white"/>
-</svg>
-
-
-                </button>
             </div>
         </div>
     </div>
 </dialog>
 
+<dialog class="modal" id="success-modal">
+    <div class="modal__content">
+        <button class="modal__close">
+            <svg width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M63.6328 21.2031L21.2064 63.6295" stroke="white" stroke-width="4" stroke-linecap="round" />
+                <path d="M21.2266 21.2031L63.653 63.6295" stroke="white" stroke-width="4" stroke-linecap="round" />
+            </svg>
+        </button>
 
+        <div class="modal__body">
+            <div class="modal__body-content">
+                <div class="modal__modal-notice modal-notice">
+                    <div class="modal-notice__backtext">
+                        Заявка отправлена
+                    </div>
+                    <div class="modal-notice__heading">
+                        Спасибо!
+                    </div>
+                    <div class="modal-notice__text">
+                        Мы получили вашу заявку, в ближайшее время с Вами свяжется наш менеджер, ответит на все интересующие
+                        вопросы и поможет подобрать оптимальное решение под ваши задачи
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</dialog>
 
 <div class="top-btn">
     <button class="top-btn__toggle">
@@ -159,7 +184,7 @@
                             <div class="footer__worktime">
                                 Пн. - Пт. 9:00-20:00
                             </div>
-                            <a href="" class="footer__contact-link">
+                            <a href="" class="footer__contact-link" data-modal="success-modal">
                                 Оставить заявку
                             </a>
                         </div>

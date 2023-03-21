@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         setTimeout(() => {
                             modalEl.style.opacity = '1'
-                        })
+                        },150)
 
                         return
                     }
