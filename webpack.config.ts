@@ -6,6 +6,7 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import StylelintPlugin from 'stylelint-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import { VueLoaderPlugin } from 'vue-loader'
 
 import environment from './configuration/webpack.environment'
 import { fileNameGenerator, pages } from './utils/utils'
@@ -20,6 +21,10 @@ const config: Configuration = {
     },
     module: {
         rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
             // Handlebars
             {
                 test: /\.(hbs|html)$/,
@@ -37,9 +42,20 @@ const config: Configuration = {
             },
             // JS
             {
-                test: /\.(ts|js)$/i,
+                test: /\.ts$/,
                 loader: 'esbuild-loader',
                 options: {
+                    loader: 'ts',
+                    target: 'es6'
+                },
+                exclude: resolve(__dirname, 'node_modules')
+            },
+            // JS
+            {
+                test: /\.js$/,
+                loader: 'esbuild-loader',
+                options: {
+                    loader: 'js',
                     target: 'es6'
                 },
                 exclude: resolve(__dirname, 'node_modules')
@@ -108,6 +124,7 @@ const config: Configuration = {
         new StylelintPlugin({
             exclude: ['node_modules']
         }),
+        new VueLoaderPlugin(),
         new ForkTsCheckerWebpackPlugin(),
         // Clean dist folder
         new CleanWebpackPlugin({

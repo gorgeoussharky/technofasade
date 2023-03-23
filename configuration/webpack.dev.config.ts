@@ -21,7 +21,7 @@ const config: Configuration = merge(baseConfig, {
                 test: /\.css$/,
                 exclude: resolve(__dirname, "node_modules"),
                 use: [
-                    'style-loader',
+                    'vue-style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -35,7 +35,7 @@ const config: Configuration = merge(baseConfig, {
                 test: /\.s[ac]ss$/i,
                 exclude: resolve(__dirname, "node_modules"),
                 use: [
-                    'style-loader',
+                    'vue-style-loader', 
                     {
                         loader: 'css-loader',
                         options: {
