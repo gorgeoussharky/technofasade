@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonialsCarousels = document.querySelectorAll('.testimonials__carousel')
     const basicCarousels = document.querySelectorAll('[data-carousel]')
     const productCarousels = document.querySelectorAll('.product-carousel__wrap')
+    const tabsCarousels = document.querySelectorAll('.tabs__carousel')
 
     heroCarousels.forEach((carousel) => {
         const control = carousel.querySelector('.hero-carousel__control') as HTMLButtonElement | undefined
@@ -187,6 +188,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         control?.addEventListener('click', () => {
             controlClickHandler(control, instance)
+        })
+    })
+
+    tabsCarousels.forEach((carousel) => {
+        const instance = new Swiper(carousel as HTMLElement, {
+            slidesPerView: 1,
+            loop: true,
+            speed,
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                }
+            }
         })
     })
 })

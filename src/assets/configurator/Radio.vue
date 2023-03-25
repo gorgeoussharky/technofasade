@@ -9,9 +9,10 @@
 </template>
 
 <script setup lang="ts">
+import { nanoid } from 'nanoid';
+
 interface Props {
     label?: string;
-    id: string;
     name: string;
     value: string
     model: string;
@@ -22,6 +23,8 @@ interface Props {
 interface Emits {
     (e: 'update:model', value: string): void;
 }
+
+const id = nanoid()
 
 defineProps<Props>()
 const emit = defineEmits<Emits>()
@@ -59,6 +62,14 @@ const handleChange = (e: Event) => {
                 transition: 350ms;
             }
         }
+
+        &:disabled {
+            ~label {
+                opacity: 0.5;
+                filter: grayscale(100);
+                cursor: not-allowed;
+            }
+        }
     }
 
     &__label {
@@ -69,6 +80,12 @@ const handleChange = (e: Event) => {
         border-radius: 40px;
         cursor: pointer;
         transition: 350ms;
+
+        
+        @include media-breakpoint-down(sm) {
+            font-size: 18px;
+            padding: 4px 12px;
+        }
     }
 }
 </style>

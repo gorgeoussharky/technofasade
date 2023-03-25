@@ -1,0 +1,111 @@
+.tabs {
+    &__list {
+        @include unlist();
+
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        gap: rem(66px);
+        margin-bottom: rem(80px);
+        overflow: auto;
+        padding-bottom: 12px;
+
+        @include media-breakpoint-down(md) {
+            gap: rem(30px);
+        }
+
+        @include media-breakpoint-down(sm) {
+            gap: 20px;
+            margin: 0 -12px;
+            margin-bottom: 40px;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
+
+    &__btn {
+        font-weight: 700;
+        font-size: rem(48px);
+        line-height: 1;
+        color: $main;
+        font-family: Cormorant, sans-serif;
+        border-bottom: 2px solid $main;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 30px;
+        }
+
+        &--active, &:hover {
+            border-bottom: 2px solid transparent;
+            color: #000;
+        }
+    }
+
+    &__content {
+        display: none;
+      
+        &--attr {
+            max-width: 1225px;
+        }
+
+        &--active {
+            display: block;
+        }
+
+        &-list {
+            @include unlist();
+            
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: rem(20px 160px);
+
+            @include media-breakpoint-down(md) {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        &-item {
+            color: #898989;
+            display: flex;
+            align-items: flex-end;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+            }
+
+            span {
+                color: #000;
+                font-weight: 600;
+                display: flex;
+                flex:  1 1 auto;
+
+                &::before {
+                    content: '';
+                    border-bottom: 1px dashed #898989;
+                    flex:  1 1 auto;
+                    transform: translateY(-8px);
+                    margin: 0 4px;
+                }
+            }
+        }
+    }
+
+    &__carousel {
+        &--infinite {
+            overflow: visible;
+        }
+
+        &-item {
+            img, video, iframe {
+                height: 480px;
+                object-fit: cover;
+                width: 100%;
+
+                @include media-breakpoint-down(md) {
+                    height: 230px;
+                }
+            }
+        }
+    }
+}

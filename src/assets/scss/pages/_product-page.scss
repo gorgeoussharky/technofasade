@@ -75,6 +75,16 @@
             }
         }
     }
+
+    &__attributes {
+        overflow: hidden;
+        background-color: #fff;
+        padding-bottom: rem(200px);
+
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 100px;
+        }
+    }
 }
 
 .product-carousel {

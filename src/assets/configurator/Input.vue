@@ -1,28 +1,28 @@
 <template>
     <div class="configurator-input" :class="[large && 'configurator-input--large']">
         <div class="configurator-input__wrap">
-            <label class="configurator-input__label" :for="id">{{ label }}</label>
+            <label class="configurator-input__label" :for="id">
+                {{ label }}
+            </label>
             <input :type="type || 'text'" class="configurator-input__control" :id="id" :placeholder="label || placeholder"
                 @input="handleInput($event)" :value="value" :disabled="disabled">
-
-            <div class="configurator-input__notice" v-if="notice">
-                {{ notice }}
-            </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+import { nanoid } from 'nanoid'
+
 interface Props {
     label?: string;
     type?: string;
-    id?: string;
     placeholder?: string;
     value: string | number
     disabled?: boolean
     large?: boolean
-    notice?: string
 }
+
+const id = nanoid()
 
 interface Emits {
     (e: 'update:value', value: string | number): void;
@@ -77,6 +77,16 @@ const handleInput = (e: Event) => {
         &::placeholder {
             color: #8d8d8d;
         }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &[type=number] {
+            -moz-appearance: textfield;
+        }
     }
 
     &--large {
@@ -87,20 +97,15 @@ const handleInput = (e: Event) => {
                 padding: rem(8px) rem(16px);
                 height: 60px;
                 max-width: 190px;
+
+                @include media-breakpoint-down(sm) {
+                    padding: 0 14px;
+                    padding-top: 8px;
+                    font-size: 40px;
+                    max-width: 150px;
+                }
             }
         }
-    }
-
-    &__notice {
-        font-size: rem(14px);
-        line-height: 18px;
-        color: #CB9274;
-        position: absolute;
-        left: 210px;
-        bottom: 16px;
-        max-width: 270px;
-        display: flex;
-        align-items: center;
     }
 }
 </style>

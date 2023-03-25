@@ -1,27 +1,26 @@
 <template>
-    <div class="configurator-select">
-        <label class="configurator-select__label" :for="id">{{ label }}</label>
-        
-        <div class="configurator-select__wrap configurator-select__wrap--sm">
-            <select class="configurator-select__control" :id="id"
-                @change="handleSelect(($event.target as HTMLSelectElement).value)" :value="value?.value"
-                :disabled="disabled">
-                <option v-for="option in options" :value="JSON.stringify(option)">{{ option.label }}</option>
-            </select>
-        </div>
+    <div class="configurator-select" :class="disabled && 'configurator-select--disabled'">
+        <label class="configurator-select__label" :for="id">{{ label }}
 
-        <div class="configurator-select__wrap configurator-select__wrap--xl">
-            <div class="configurator-select__value" @click="showDropdown = !showDropdown">
-                <span class="configurator-select__color" v-if="colors && value" :style="{ backgroundColor: value.value }"></span>
+            <Helper class="configurator-select__helper" v-if="helper" :text="helper" />
+        </label>
+
+        <div class="configurator-select__wrap configurator-select__wrap">
+
+            <div class="configurator-select__value" @click="handleDropdownToggle">
+                <span class="configurator-select__color" v-if="colors && value"
+                    :style="{ backgroundColor: value.color }"></span>
+
                 {{ value?.label || label }}
             </div>
 
             <div class="configurator-select__dropdown" v-if="showDropdown">
-                <ul class="configurator-select__list">
+                <ul class="configurator-select__list" :data-title="label">
                     <li class="configurator-select__item" v-for="option in options">
                         <button class="configurator-select__button" :disabled="disabled"
                             @click.prevent="handleSelect(option)">
-                            <span class="configurator-select__color" v-if="colors" :style="{ backgroundColor: option.value }"></span>
+                            <span class="configurator-select__color" v-if="colors"
+                                :style="{ backgroundColor: option.color }"></span>
                             {{ option.label }}
                         </button>
                     </li>
@@ -32,23 +31,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { nanoid } from 'nanoid';
+import { ref, watch } from 'vue';
 import { Option } from '~/src/types/configurator';
+import Helper from './Helper.vue';
 
 interface Props {
     label?: string;
-    id: string;
     options: Option[];
     value?: Option
     disabled?: boolean
     colors?: boolean
+    helper?: string
 }
 
 interface Emits {
     (e: 'update:value', value: Option): void;
 }
 
-defineProps<Props>()
+const id = nanoid()
+
+const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
 
 const showDropdown = ref<boolean>(false)
@@ -62,8 +65,16 @@ const handleSelect = (option: string | Option) => {
     emit('update:value', option)
 
     showDropdown.value = false
-
 }
+
+const handleDropdownToggle = () => {
+    if (props.disabled) return
+    showDropdown.value = !showDropdown.value
+}
+
+watch(() => props.disabled, () => {
+    showDropdown.value = false
+})
 </script>
 
 <style lang="scss" scoped>
@@ -75,30 +86,24 @@ const handleSelect = (option: string | Option) => {
 @import '~bootstrap/scss/containers';
 @import '~sass-rem/rem';
 @import '@/assets/scss/base/variables';
+
 .configurator-select {
     &__wrap {
         position: relative;
-
-        &--sm {
-            @media (hover: hover) {
-                display: none;
-            }
-        }
-
-        &--xl {
-            display: none;
-
-            @media (hover: hover) {
-                display: block;
-            }
-        }
+        transition: 350ms;
     }
 
     &__label {
         font-weight: 500;
         color: #AFAFAF;
         margin-bottom: rem(6px);
-        display: block;
+        gap: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__helper {
+        flex: 1 1 auto;
     }
 
     &__value {
@@ -115,6 +120,12 @@ const handleSelect = (option: string | Option) => {
         display: flex;
         align-items: center;
         gap: 8px;
+        cursor: pointer;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 16px;
+            padding-bottom: 16px;
+        }
 
         &::after {
             content: '';
@@ -126,7 +137,13 @@ const handleSelect = (option: string | Option) => {
             width: 30px;
             height: 30px;
             background-position: center;
+            background-size: contain;
             background-repeat: no-repeat;
+
+            @include media-breakpoint-down(sm) {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 
@@ -134,12 +151,7 @@ const handleSelect = (option: string | Option) => {
         width: 12px;
         height: 12px;
         transform: rotate(45deg);
-        display: block;
-
-        @include media-breakpoint-down(xxl) {
-            width: 18px;
-            height: 18px;
-        }
+        display: blockk
     }
 
     &__dropdown {
@@ -152,6 +164,19 @@ const handleSelect = (option: string | Option) => {
         padding: rem(16px);
         box-shadow: 0 6px 30px rgba(194 173 162 / 10%);
 
+        @include media-breakpoint-down(md) {
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: rgba(#322B28, 0.75);
+            z-index: 300;
+            top: 0;
+            height: 100dvh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     &__list {
@@ -160,6 +185,24 @@ const handleSelect = (option: string | Option) => {
         padding: 0;
         display: grid;
         gap: 10px;
+
+        @include media-breakpoint-down(md) {
+            background-color: #fff;
+            box-shadow: 0px -5px 80px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            position: relative;
+            padding-top: 60px;
+
+            &::before {
+                content: attr(data-title);
+                color: #AFAFAF;
+                position: absolute;
+                top: 20px;
+                left: 30px;
+            }
+        }
     }
 
     &__button {
@@ -169,8 +212,15 @@ const handleSelect = (option: string | Option) => {
         gap: 8px;
         font-size: rem(18px);
         font-weight: 600;
-
     }
 
+    &--disabled {
+        .configurator-select__wrap {
+            cursor: not-allowed;
+            opacity: 0.5;
+            transition: 350ms;
+            filter: grayscale(100);
+        }
+    }
 }
 </style>
