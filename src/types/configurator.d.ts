@@ -45,6 +45,7 @@ export interface PreviewData {
     upperLayer: UpperLayer
     bottomLayer: BottomLayer
     centralParts: CentralParts
+    secondaryCentralParts: CentralParts
     horizontalParts: HorizontalParts
     lockPart: LockPart
     plugPart: PlugPart

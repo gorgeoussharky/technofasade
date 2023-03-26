@@ -5,7 +5,7 @@
             <div class="configurator__wrap">
                 <div class="configurator__col">
                     <div class="configurator__heading">Собери свое решение</div>
-                    <div ref="configuratorWrap" class="configurator__configurator-preview-wrap">
+                    <div ref="configuratorPreviewWrap" class="configurator__configurator-preview-wrap">
                         <Suspense>
                             <Preview class="configurator__configurator-preview configurator__configurator-preview--static"
                                 :class="fixedPreview && 'configurator__configurator-preview--hidden'" :data="previewData"
@@ -96,7 +96,7 @@
                             <Select class="configurator__configurator-input" v-model:value="centralParts.size"
                                 label="Размер (мм)" :options="sizes"
                                 helper="Выбор узора серединных частей доступен только для размера 500Х300. <br><br>
-                                                                                                                                                                        Узор “Филенка” доступен для всех размеров " />
+                                                                                                                                                                                Узор “Филенка” доступен для всех размеров " />
                             <div class="configurator__row">
                                 <div class="configurator__radio-group">
                                     <div class="configurator__radio-group-title">
@@ -228,7 +228,7 @@
                         </Block>
                     </div>
 
-                    <div class="configurator__actions">
+                    <div class="configurator__actions" :class="loading && 'configurator__actions--loading'">
                         <button class="configurator__action" @click="handleOpenModal()">
                             Отправить заявку
 
@@ -242,7 +242,7 @@
 
                         </button>
 
-                    <!-- <button class="configurator__action" @click="getPDF()">
+                        <button class="configurator__action" @click="getPDF()">
                             Сохранить в pdf
 
                             <svg width="25" height="30" viewBox="0 0 25 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -257,7 +257,7 @@
                             </svg>
 
 
-                            </button> -->
+                        </button>
                     </div>
                 </div>
             </div>
@@ -267,6 +267,8 @@
 
 <script setup lang="ts">
 import { computed, reactive, watch, ref } from 'vue';
+import html2canvas from 'html2canvas';
+
 import Block from './Block.vue';
 import Checkbox from './Checkbox.vue';
 import Input from './Input.vue';
@@ -320,7 +322,7 @@ const bottomLayer = reactive({
 
 const centralParts = reactive({
     active: false,
-    size: { label: '500x300', value: '500x300' },
+    size: sizes[2],
     texture: 'Ромб',
     color: colors[0],
     windows: 8
@@ -328,7 +330,7 @@ const centralParts = reactive({
 
 const secondaryCentralParts = reactive({
     active: false,
-    size: { label: '500x300', value: '500x300' },
+    size: sizes[2],
     texture: 'Ромб',
     color: colors[0],
     windows: 8
@@ -336,20 +338,20 @@ const secondaryCentralParts = reactive({
 
 const horizontalParts = reactive({
     active: false,
-    complect: { value: 'Планка+торцевые заглушки+замковый камень', label: 'Планка+торцевые заглушки+замковый камень' },
-    length: { value: 'В размер окна+ставни', label: 'В размер окна+ставни' },
-    windowSize: { value: '1450Х1300', label: '1450Х1300' },
+    complect: complects[3],
+    length: lengths[1],
+    windowSize: windowSizes[0],
     color: colors[0],
 })
 
 const lockPart = reactive({
     texture: 'Ромб',
-    color: colors[0],
+    color: colors.filter(el => el.value !== horizontalParts.color.value)[0],
     sameColor: false
 })
 
 const plugPart = reactive({
-    color: colors[0],
+    color: colors.filter(el => el.value !== horizontalParts.color.value)[0],
     sameColor: false
 })
 
@@ -358,9 +360,10 @@ const fastener = reactive({
 })
 
 const currentPart = ref<string>()
-const configuratorWrap = ref<HTMLElement>()
+const configuratorPreviewWrap = ref<HTMLElement>()
 const configurator = ref<HTMLElement>()
 const fixedPreview = ref<boolean>()
+const loading = ref<boolean>(false)
 
 const previewData = computed(() => {
     return {
@@ -377,6 +380,11 @@ const previewData = computed(() => {
             active: centralParts.active,
             color: centralParts.color.value,
             texture: centralParts.texture,
+        },
+        secondaryCentralParts: {
+            active: secondaryCentralParts.active,
+            color: secondaryCentralParts.color.value,
+            texture: secondaryCentralParts.texture,
         },
         horizontalParts: {
             color: horizontalParts.color.value,
@@ -418,9 +426,9 @@ watch(() => secondaryCentralParts.size, () => {
 document.addEventListener('scroll', () => {
     if (window.matchMedia('(min-width: 991px)').matches) return
 
-    if (!configuratorWrap.value || !configurator.value) return
+    if (!configuratorPreviewWrap.value || !configurator.value) return
 
-    if (window.scrollY + 100 > configuratorWrap.value.offsetTop && window.scrollY < configurator.value.offsetTop + configurator.value.offsetHeight) {
+    if (window.scrollY + 100 > configuratorPreviewWrap.value.offsetTop && window.scrollY < configurator.value.offsetTop + configurator.value.offsetHeight) {
         fixedPreview.value = true
         return
     }
@@ -504,6 +512,17 @@ const getPDF = async () => {
     data.append('data', JSON.stringify(collectData()))
     data.append('action', 'get_pdf')
 
+    loading.value = true
+
+    if (configuratorPreviewWrap.value) {
+        const preview = await html2canvas(configuratorPreviewWrap.value, {
+            scale: 0.7
+        })
+        data.append('preview', preview.toDataURL("image/jpg"))
+    }
+
+
+
     const req = await fetch('https://shuvalov.crazytest.studio/technofasade_wp/wp-admin/admin-ajax.php', {
         method: 'POST',
         body: data,
@@ -511,7 +530,12 @@ const getPDF = async () => {
 
     const resp = await req.text()
 
-    console.log(resp)
+    if (!resp) return
+
+    loading.value = false
+
+    window.open(resp, '_blank');
+
 }
 
 </script>
@@ -582,7 +606,7 @@ const getPDF = async () => {
         gap: rem(50px);
         align-items: center;
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(md) {
             grid-template-columns: 1fr;
             gap: 24px;
         }
@@ -656,7 +680,7 @@ const getPDF = async () => {
 
     &__configurator-preview-wrap {
         position: sticky;
-        top: 150px;
+        top: 100px;
 
         @include media-breakpoint-down(lg) {
             height: 32vh;
@@ -729,6 +753,15 @@ const getPDF = async () => {
         margin-top: rem(120px);
         display: grid;
         gap: rem(32px);
+
+        &--loading {
+            opacity: 0.5;
+            cursor: progress;
+
+            .configurator__action {
+                cursor: progress;
+            }
+        }
     }
 
     &__action {

@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkEl = link as HTMLAnchorElement
         const { hash } = linkEl
 
-        if (hash && window.matchMedia('(max-width:1200px)').matches) {
+        if (hash) {
             linkEl.addEventListener('click', () => {
                 headerState.menuExpanded = false
             })

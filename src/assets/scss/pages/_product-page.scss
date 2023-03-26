@@ -66,9 +66,11 @@
         }
 
         .advantages__backtext {
-            font-size: rem(100px);
-            left: 0;
-            right: 0;
+            @include media-breakpoint-up(xl) {
+                font-size: rem(100px);
+                left: 0;
+                right: 0;
+            }
 
             @include media-breakpoint-down(sm) {
                 font-size: 38px;

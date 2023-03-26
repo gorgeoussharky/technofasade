@@ -33,6 +33,7 @@ $container-max-widths: (
 @import 'components/gallery';
 @import 'components/company-advantages';
 @import 'components/tabs';
+@import 'components/testimonial-item';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'sections/hero';
@@ -53,3 +54,4 @@ $container-max-widths: (
 @import 'pages/portfolio-page';
 @import 'pages/certificates-page';
 @import 'pages/contacts-page';
+@import 'pages/error-page';

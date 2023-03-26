@@ -297,18 +297,6 @@
             grid-template-columns: 1fr;
             font-size: rem(20px);
         }
-
-        &--optional {
-            grid-template-columns: 1fr 0.85fr 2fr;
-
-            @include media-breakpoint-down(xxl) {
-                grid-template-columns: 1fr 0.9fr 2fr;
-            }
-
-            @include media-breakpoint-down(lg) {
-                grid-template-columns: 2fr 1fr;
-            }
-        }
     }
 
     &__title {
@@ -373,9 +361,14 @@
 
     &__notice {
         color: $main;
+        margin-left: rem(24px);
 
         @include media-breakpoint-down(lg) {
             text-align: right;
+        }
+
+        @media (max-width: 400px) {
+            display: block;
         }
     }
 

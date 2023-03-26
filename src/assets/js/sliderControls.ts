@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const controls = document.querySelectorAll('[data-animate-controls]')
 
     controls.forEach((controlWrap) => {
@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
             control.style.opacity = '0'
         })
 
-        controlWrap.addEventListener('mousemove', (e) => {  
+        controlWrap.addEventListener('mousemove', (e) => {
             const bounds = controlWrap.getBoundingClientRect()
             const x = (e as MouseEvent).clientX - bounds.left
             const y = (e as MouseEvent).clientY - bounds.top
+
+            if (y > bounds.height || y < 0) return
 
             if (x < bounds.width / 2) {
                 control.style.transform = 'rotate(180deg)'

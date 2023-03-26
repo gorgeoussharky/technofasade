@@ -5,6 +5,7 @@
                 :style="acttivePartStyle('horizontalParts')" v-show="data.horizontalParts.active" >
             <img :src="upperImg?.default" alt="" class="configurator-preview__top" :style="acttivePartStyle('upperLayer')">
             <img :src="middleImg?.default" alt="" class="configurator-preview__middle" :style="acttivePartStyle('centralParts')"  v-show="data.centralParts.active" >
+            <img :src="secondaryMiddleImg?.default" alt="" class="configurator-preview__middle" :style="acttivePartStyle('centralParts')"  v-show="data.secondaryCentralParts.active" >
             <img :src="bottomImg?.default" alt="" class="configurator-preview__bottom" :style="acttivePartStyle('bottomLayer')"  v-show="data.bottomLayer.active" >
         </div>
     </div>
@@ -21,11 +22,10 @@ interface Props {
 
 const props = defineProps<Props>()
 
-console.log(props.data)
-
 const horizontalImg = ref<Promise<string>>()
 const upperImg = ref<Promise<string>>()
 const middleImg = ref<Promise<string>>()
+const secondaryMiddleImg = ref<Promise<string>>()
 const bottomImg = ref<Promise<string>>()
 
 const acttivePartStyle = (part: string) => {
@@ -108,6 +108,13 @@ const getMiddleImg = async () => {
     return img
 }
 
+const getSecondaryMiddleImg = async () => {
+    let img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle.jpg`)
+
+    return img
+}
+
+
 const getBottomImg = async () => {
     let img
 
@@ -129,6 +136,7 @@ horizontalImg.value = await getHorizontalImg()
 upperImg.value = await getUpperImg()
 bottomImg.value = await getBottomImg()
 middleImg.value = await getMiddleImg()
+secondaryMiddleImg.value = await getSecondaryMiddleImg()
 
 watch(() => [props.data.horizontalParts, props.data.lockPart], async () => {
     console.log(props.data)
@@ -145,6 +153,10 @@ watch(() => props.data.bottomLayer, async () => {
 
 watch(() => props.data.centralParts, async () => {
     middleImg.value = await getMiddleImg()
+})
+
+watch(() => props.data.secondaryCentralParts, async () => {
+    secondaryMiddleImg.value = await getSecondaryMiddleImg()
 })
 </script>
 
@@ -171,8 +183,8 @@ watch(() => props.data.centralParts, async () => {
         max-width: 100%;
         transition: 350ms;
         
-        @include media-breakpoint-down(sm) {
-            max-width: 25vh;
+        @include media-breakpoint-down(lg) {
+            max-width: 22vh;
         }
     }
 
