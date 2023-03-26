@@ -458,14 +458,14 @@ const collectData = () => {
     }
 
     if (centralParts.active) {
-        configuratorData['Размер серединных'] = centralParts.size
+        configuratorData['Размер серединных'] = centralParts.size.label
         configuratorData['Узор серединных'] = centralParts.texture
         configuratorData['Цвет серединных'] = centralParts.color.label
         configuratorData['Количество окон серединных'] = centralParts.windows
     }
 
     if (secondaryCentralParts.active) {
-        configuratorData['Размер серединных 2'] = secondaryCentralParts.size
+        configuratorData['Размер серединных 2'] = secondaryCentralParts.size.label
         configuratorData['Узор серединных 2'] = secondaryCentralParts.texture
         configuratorData['Цвет серединных 2'] = secondaryCentralParts.color.label
         configuratorData['Количество окон серединных 2'] = secondaryCentralParts.windows
