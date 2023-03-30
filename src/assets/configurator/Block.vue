@@ -89,7 +89,7 @@ onMounted(() => {
             position: absolute;
             width: 60px;
             height: 60px;
-            background-color: $bodybg;
+            background-color: #fff;
             background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='4.48866' y='11.6826' width='11.5219' height='11.5219' transform='rotate(-45 4.48866 11.6826)' stroke='%23CB9274' stroke-width='5'/%3E%3C/svg%3E%0A");
             background-size: 25px 25px;
             background-position: center;

@@ -63,4 +63,26 @@
             }
         }
     }
+
+    &--error {
+        .input__control {
+            border-color: #e30500;
+            transition: 350ms;
+            color: #e30500;
+        }
+
+        .input__icon {
+            svg path {
+                stroke: #e30500;
+                transition: 350ms;
+            }
+
+            &--user {
+                svg path {
+                    fill: #e30500;
+                    transition: 350ms;
+                }
+            }
+        }
+    }
 }

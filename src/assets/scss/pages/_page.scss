@@ -46,6 +46,8 @@
     }
 
     &__content {
+        min-width: 1px;
+
         @extend %dynamic-content;
     }
 }

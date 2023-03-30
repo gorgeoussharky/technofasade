@@ -75,7 +75,7 @@ const handleChange = (e: Event) => {
 
     &__label {
         position: relative;
-        padding-left: rem(42px);
+        padding-left: 42px;
         font-weight: 600;
         font-size: rem(18px);
         display: flex;
@@ -83,6 +83,7 @@ const handleChange = (e: Event) => {
         color: rgba(#000, 0.4);
         transition: 350ms;
         cursor: pointer;
+        min-height: 30px;
 
         &::before {
             content: '';

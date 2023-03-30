@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const messengers = document.querySelector('.messengers') as HTMLElement | undefined
     const topBtn = document.querySelector('.top-btn__toggle') as HTMLElement | undefined
     const toggle = messengers?.querySelector('.messengers__toggle') as HTMLElement | undefined
+    const footer = document.querySelector('.footer') as HTMLElement
 
     if (!messengers) return
 
@@ -38,6 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggle?.addEventListener('click', () => {
         state.expanded = !state.expanded
+    })
+
+    document.addEventListener('scroll', () => {        
+        if ((window.scrollY + window.innerHeight) >= footer.offsetTop - 200) {
+            messengers.classList.add('messengers--hidden')
+            return
+        }
+
+        messengers.classList.remove('messengers--hidden')
     })
 })
 

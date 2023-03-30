@@ -1,12 +1,22 @@
 <template>
     <div class="configurator-preview">
         <div class="configurator-preview__content">
-            <img :src="horizontalImg?.default" alt="" class="configurator-preview__horizontal"
-                :style="acttivePartStyle('horizontalParts')" v-show="data.horizontalParts.active" >
+            <div class="configurator-preview__horizontal-block" :style="acttivePartStyle('horizontalParts')"
+                v-show="data.horizontalParts.active">
+                <img :src="horizontalImg?.default" alt="" class="configurator-preview__horizontal">
+                <img :src="plugImg?.default" alt="" class="configurator-preview__plug configurator-preview__plug--left">
+                <img :src="lockImg?.default" alt="" class="configurator-preview__lock"
+                    :class="data.lockPart.texture === 'Полусолнце' && 'configurator-preview__lock--sun'">
+                <img :src="plugImg?.default" alt="" class="configurator-preview__plug configurator-preview__plug--right">
+            </div>
             <img :src="upperImg?.default" alt="" class="configurator-preview__top" :style="acttivePartStyle('upperLayer')">
-            <img :src="middleImg?.default" alt="" class="configurator-preview__middle" :style="acttivePartStyle('centralParts')"  v-show="data.centralParts.active" >
-            <img :src="secondaryMiddleImg?.default" alt="" class="configurator-preview__middle" :style="acttivePartStyle('centralParts')"  v-show="data.secondaryCentralParts.active" >
-            <img :src="bottomImg?.default" alt="" class="configurator-preview__bottom" :style="acttivePartStyle('bottomLayer')"  v-show="data.bottomLayer.active" >
+            <img :src="middleImg?.default" alt="" class="configurator-preview__middle"
+                :style="acttivePartStyle('centralParts')" v-show="data.centralParts.active">
+            <img :src="secondaryMiddleImg?.default" alt=""
+                class="configurator-preview__middle configurator-preview__middle--secondary"
+                :style="acttivePartStyle('centralParts')" v-show="data.secondaryCentralParts.active">
+            <img :src="bottomImg?.default" alt="" class="configurator-preview__bottom"
+                :style="acttivePartStyle('bottomLayer')" v-show="data.bottomLayer.active">
         </div>
     </div>
 </template>
@@ -27,25 +37,10 @@ const upperImg = ref<Promise<string>>()
 const middleImg = ref<Promise<string>>()
 const secondaryMiddleImg = ref<Promise<string>>()
 const bottomImg = ref<Promise<string>>()
+const lockImg = ref<Promise<string>>()
+const plugImg = ref<Promise<string>>()
 
 const acttivePartStyle = (part: string) => {
-    // if (part === 'horizontalParts' && !props.data.horizontalParts.active) {
-    //     return {
-    //         opacity: 0
-    //     }
-    // }
-
-    // if (part === 'centralParts' && !props.data.centralParts.active) {
-    //     return {
-    //         opacity: 0
-    //     }
-    // }
-
-    // if (part === 'bottomLayer' && !props.data.bottomLayer.active) {
-    //     return {
-    //         opacity: 0
-    //     }
-    // }
 
     if (!props.currentPart) {
         return {
@@ -64,24 +59,8 @@ const acttivePartStyle = (part: string) => {
     }
 }
 
-
 const getHorizontalImg = async () => {
     let img = await import(`@/assets/configurator/imgParts/${props.data.horizontalParts.color}/horizontal_simple.jpg`)
-
-    if (props.data.lockPart.active) {
-        switch (props.data.lockPart.texture) {
-            case 'Ромб':
-                img = await import(`@/assets/configurator/imgParts/${props.data.horizontalParts.color}/horizontal_rhombus.jpg`)
-                break
-            case 'Полусолнце':
-                img = await import(`@/assets/configurator/imgParts/${props.data.horizontalParts.color}/horizontal_sun.jpg`)
-                break;
-            default:
-                img = await import(`@/assets/configurator/imgParts/${props.data.horizontalParts.color}/horizontal_simple.jpg`)
-                break
-        }
-    }
-
     return img
 }
 
@@ -103,17 +82,67 @@ const getUpperImg = async () => {
 }
 
 const getMiddleImg = async () => {
-    let img = await import(`@/assets/configurator/imgParts/${props.data.centralParts.color}/middle.jpg`)
+    let img
+
+    switch (props.data.secondaryCentralParts.texture) {
+        case 'Филенка':
+            img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle.jpg`)
+            break
+        case 'Ромб':
+            img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle_rhombus.jpg`)
+            break
+        default:
+            img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle.jpg`)
+            break;
+    }
 
     return img
 }
 
 const getSecondaryMiddleImg = async () => {
-    let img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle.jpg`)
+    let img
+
+    switch (props.data.secondaryCentralParts.texture) {
+        case 'Филенка':
+            img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle.jpg`)
+            break
+        case 'Ромб':
+            img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle_rhombus.jpg`)
+            break
+        default:
+            img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle.jpg`)
+            break;
+    }
+
 
     return img
 }
 
+const getLockImg = async () => {
+    let img
+
+    if (props.data.lockPart.active) {
+        switch (props.data.lockPart.texture) {
+            case 'Ромб':
+                img = await import(`@/assets/configurator/imgParts/${props.data.lockPart.color}/rhombus.png`)
+                break
+            case 'Полусолнце':
+                img = await import(`@/assets/configurator/imgParts/${props.data.lockPart.color}/sun.png`)
+                break;
+            default:
+                img = await import(`@/assets/configurator/imgParts/${props.data.lockPart.color}/rhombus.png`)
+                break
+        }
+    }
+
+    return img
+}
+
+const getPlugImg = async () => {
+    let img = await import(`@/assets/configurator/imgParts/${props.data.plugPart.color}/plug.png`)
+
+    return img
+}
 
 const getBottomImg = async () => {
     let img
@@ -137,6 +166,8 @@ upperImg.value = await getUpperImg()
 bottomImg.value = await getBottomImg()
 middleImg.value = await getMiddleImg()
 secondaryMiddleImg.value = await getSecondaryMiddleImg()
+plugImg.value = await getPlugImg()
+lockImg.value = await getLockImg()
 
 watch(() => [props.data.horizontalParts, props.data.lockPart], async () => {
     console.log(props.data)
@@ -157,6 +188,14 @@ watch(() => props.data.centralParts, async () => {
 
 watch(() => props.data.secondaryCentralParts, async () => {
     secondaryMiddleImg.value = await getSecondaryMiddleImg()
+})
+
+watch(() => props.data.lockPart, async () => {
+    lockImg.value = await getLockImg()
+})
+
+watch(() => props.data.plugPart, async () => {
+    plugImg.value = await getPlugImg()
 })
 </script>
 
@@ -181,8 +220,7 @@ watch(() => props.data.secondaryCentralParts, async () => {
 
     img {
         max-width: 100%;
-        transition: 350ms;
-        
+
         @include media-breakpoint-down(lg) {
             max-width: 22vh;
         }
@@ -191,5 +229,58 @@ watch(() => props.data.secondaryCentralParts, async () => {
     .hidden {
         opacity: 0;
     }
+
+    &__horizontal-block {
+        position: relative;
+    }
+
+    &__plug {
+        position: absolute;
+        top: 14px;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        &--left {
+            left: -73%;
+        }
+
+        &--right {
+            right: -73%;
+            transform: scaleX(-1);
+        }
+
+        @include media-breakpoint-down(xl) {
+            height: 60px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            height: 80%;
+            top: 2px;
+        }
+
+    }
+
+    &__lock {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 8px;
+
+        &--sun {
+            top: -10px;
+        }
+
+        @include media-breakpoint-down(xl) {
+            height: 74px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            height: 100%;
+            top: 0;
+        }
+    }
+
 }
 </style>
