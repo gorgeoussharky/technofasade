@@ -84,15 +84,15 @@ const getUpperImg = async () => {
 const getMiddleImg = async () => {
     let img
 
-    switch (props.data.secondaryCentralParts.texture) {
+    switch (props.data.centralParts.texture) {
         case 'Филенка':
-            img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle.jpg`)
+            img = await import(`@/assets/configurator/imgParts/${props.data.centralParts.color}/middle.jpg`)
             break
         case 'Ромб':
-            img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle_rhombus.jpg`)
+            img = await import(`@/assets/configurator/imgParts/${props.data.centralParts.color}/middle_rhombus.jpg`)
             break
         default:
-            img = await import(`@/assets/configurator/imgParts/${props.data.secondaryCentralParts.color}/middle.jpg`)
+            img = await import(`@/assets/configurator/imgParts/${props.data.centralParts.color}/middle.jpg`)
             break;
     }
 
