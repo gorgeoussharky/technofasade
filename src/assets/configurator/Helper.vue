@@ -34,6 +34,7 @@ const showPopup = ref<boolean>(false)
 .helper {
     &__wrap {
         position: relative;
+        display: none;
     }
 
     &__icon {

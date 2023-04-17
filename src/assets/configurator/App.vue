@@ -131,7 +131,7 @@
                                 label="Размер (мм)" :options="sizes"
                                 helper="Выбор узора серединных частей доступен только для размера 500Х300. <br><br>
                                                                                                                                                                                                 Узор “Филенка” доступен для всех размеров " />
-                            <div class="configurator__row">
+                            <!-- <div class="configurator__row">
                                 <div class="configurator__radio-group">
 
                                     <div class="configurator__radio-group-title">
@@ -152,10 +152,10 @@
                                     </div>
                                 </div>
 
-                                <Select class="configurator__configurator-select" label="Цвет ставень" :colors="true"
-                                    :options="colors" v-model:value="centralParts.color" />
+                            </div> -->
 
-                            </div>
+                            <Select class="configurator__configurator-select" label="Цвет ставень" :colors="true"
+                                    :options="colors" v-model:value="centralParts.color" />
 
                             <div class="configurator__input-group">
 
@@ -173,7 +173,7 @@
                                     v-model:value="secondaryCentralParts.size" :options="sizes"
                                     helper="Выбор узора серединных частей доступен только для размера 500Х300. <br><br> Узор “Филенка” доступен для всех размеров " />
 
-                                <div class="configurator__row">
+                                <!-- <div class="configurator__row">
                                     <div class="configurator__radio-group">
                                         <div class="configurator__radio-group-title">
                                             Узор
@@ -193,10 +193,12 @@
                                         </div>
                                     </div>
 
-                                    <Select class="configurator__configurator-select" label="Цвет ставень" :colors="true"
-                                        :options="colors" v-model:value="secondaryCentralParts.color" />
+                                    
 
-                                </div>
+                                </div> -->
+
+                                <Select class="configurator__configurator-select" label="Цвет ставень" :colors="true"
+                                        :options="colors" v-model:value="secondaryCentralParts.color" />
 
                                 <div class="configurator__input-group">
                                     <Input type="number" class="configurator__configurator-input"
@@ -235,14 +237,16 @@
                             <Select class="configurator__configurator-select" :options="complects" label="Комплектация"
                                 v-model:value="horizontalParts.complect" />
 
-                            <div class="configurator__row">
+                            <!-- <div class="configurator__row">
 
-                                <Select class="configurator__configurator-select" v-model:value="horizontalParts.length"
-                                    :options="lengths" label="Длина планки" />
+                                
 
                                 <Select class="configurator__configurator-select" v-model:value="horizontalParts.windowSize"
                                     :options="windowSizes" label="Размер окна" />
-                            </div>
+                            </div> -->
+
+                            <Select class="configurator__configurator-select" v-model:value="horizontalParts.length"
+                                    :options="lengths" label="Длина планки" />
 
                             <Select class="configurator__configurator-select" :options="colors" label="Цвет планки" colors
                                 v-model:value="horizontalParts.color" />
@@ -359,7 +363,6 @@ const colors = [
 const sizes = [
     { value: '300х330', label: '300х330' },
     { value: '200х330', label: '200х330' },
-    { value: '500х300', label: '500х300' },
 ]
 
 const complects = [
@@ -547,7 +550,7 @@ const collectData = () => {
     if (horizontalParts.active) {
         configuratorData['Комплект'] = horizontalParts.complect.label
         configuratorData['Длина'] = horizontalParts.length.label
-        configuratorData['Размер окна'] = horizontalParts.windowSize.label
+        // configuratorData['Размер окна'] = horizontalParts.windowSize.label
         configuratorData['Цвет окна'] = horizontalParts.color.label
     }
 
